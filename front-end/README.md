@@ -1,6 +1,35 @@
 # FretefyFullstack
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
+Inicialmente não sabia se era mais prático dar um ng update do projeto para uma versão mais recente do Angular, por ele ser um projeto mais cru e fácil de atualizar as dependencias, ou se eu trocava a versão do Node JS e usar assim, optei por trocar a versão do Node e assumir os riscos. Pois é um projeto de teste e caso alguma das bibliotecas que eu fosse usar não tiver mais suporte eu atualizaria depois, mas em um projeto real normalmente pegaria uma versão mais recente para justamente evitar o risco de perder o suporte de manutenção.
+
+Versões bases de configuração do projeto utilizadas:
+
+Angular 	-->		10.2.0 	
+Node JS 	-->  		^10.13.0 || ^12.11.0
+Typescript 	--> 		>=3.9.0 <4.1.0	
+RXJS 		-->		^6.5.3
+
+## Fonte: https://angular.io/guide/versions#unsupported-angular-versions
+
+
+## Projeto
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Angular Configs
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0
 
 ## Development server
 

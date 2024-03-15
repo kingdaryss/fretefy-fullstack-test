@@ -10,15 +10,17 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    component: HomeComponent
+    component: HomeComponent,
+    data: {animation: 'HomePage'}
   },
   {
     path: 'regiao',
-    loadChildren: () => import('./modules/regiao/regiao.module').then(m => m.RegiaoModule)
+    loadChildren: () => import('./modules/regiao/regiao.module').then(m => m.RegiaoModule),
+    data: {animation: 'RegiaoPage'}
   },
-  { 
-    path: '**', 
-    redirectTo: '/home' 
+  {
+    path: '**',
+    redirectTo: '/home'
   }
 ];
 
