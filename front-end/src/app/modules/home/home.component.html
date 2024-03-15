@@ -1,3 +1,21 @@
-<p>
-  home works!
-</p>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Regiões</mat-card-title>
+      <mat-card-subtitle class="small">Listagem completa das regiões com detalhamento das cidades</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <dx-tree-list
+        [wordWrapEnabled]="true"
+        [dataSource]="dataSource"
+        itemsExpr="cidades"
+        dataStructure="tree" [columnAutoWidth]="true"  [wordWrapEnabled]="true" rowAlternationEnabled="true"
+        [showRowLines]="true"
+        [showBorders]="true"
+        [columnAutoWidth]="true"
+        [searchPanel]="{visible:true}">
+        <dxi-column dataField="nome"></dxi-column>
+
+      </dx-tree-list>
+    </mat-card-content>
+  </mat-card>

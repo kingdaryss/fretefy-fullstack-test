@@ -1,28 +1,37 @@
-:host {
-    > ul {
-        list-style: none;
-        display: inline-block;
-        padding: 0;
-        margin: 0;
-        background-color: #636e72;
-        width: 100%;
 
-        > li {
-            > a {
-                display: inline-block;
-                appearance: none;
-                border: none;
-                background-color: #636e72;                
-                padding: 12px;
-                text-decoration: none;
-                font-weight: 600;
-                color: #fff;
-                border-bottom: 3px solid #636e72;
+::ng-deep mat-toolbar {
 
-                &.active {
-                    border-bottom: 3px solid #2d3436;
-                }
-            }
-        }
-    }
+  display: inline-block;
+  margin: 0;
+  width: 100%;
+  .spacer {
+    flex: 1 1 auto;
+  }
+  .mat-toobar-row {
+    padding: 0 20px;
+    border: 1px solid #e6e9ec;
+  }
+}
+
+.navbar {
+  padding: 5px 20px;
+  background-color: var(--light);
+  box-shadow: -3px 1px 1px 0px rgba(0, 0, 0, 0.01), 0px 8px 20px -6px rgba(0, 0, 0, 0.3), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  .mat-standard-chip {
+    border-radius: 6px;
+  }
+  .mat-chip-active {
+    color: white !important;
+    background-color: var(--midnight-blue) !important;
+  }
+  .example-box {
+    transition: .3s;
+  }
+  .example-box.cdk-drag-animating {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+  }
+  .example-chip .cdk-drop-list-dragging {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+  }
+
 }

@@ -7,6 +7,9 @@ import { AppComponent } from './app.component';
 import { HomeModule } from './modules/home/home.module';
 import { ToolbarModule } from './components/toolbar/toolbar.module';
 import { RouterModule } from '@angular/router';
+import { LoaderInterceptor } from './core/http-interceptors/loader-interceptor';
+import { MatCommonModule } from '@angular/material/core';
+
 
 @NgModule({
   declarations: [
@@ -16,6 +19,8 @@ import { RouterModule } from '@angular/router';
     BrowserModule,
     RouterModule,
 
+    MatCommonModule,
+
     BrowserAnimationsModule,
 
     HomeModule,
@@ -23,7 +28,7 @@ import { RouterModule } from '@angular/router';
 
     AppRoutingModule
   ],
-  providers: [],
+  providers: [LoaderInterceptor],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

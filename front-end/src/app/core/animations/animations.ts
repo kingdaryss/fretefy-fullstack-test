@@ -7,14 +7,14 @@ export class Animations {
 
   static routeFadeAnimation = trigger('routeAnimations', [
     transition('* => *', [
-      query(':enter', [style({ opacity: 0, position: 'absolute' })], {
+      query(':enter', [style({ width: 'calc(100vw - 40px)', opacity: 0, position: 'absolute', })], {
         optional: true,
       }),
       query(
         ':leave',
         [
           style({ opacity: 1 }),
-          animate('0.2s', style({ opacity: 0, position: 'absolute' })),
+          animate('0.3s', style({ opacity: 0, width: 'calc(100vw - 40px)', position: 'absolute' })),
         ],
         { optional: true }
       ),
@@ -22,7 +22,7 @@ export class Animations {
         ':enter',
         [
           style({ opacity: 0 }),
-          animate('0.2s', style({ opacity: 1, position: 'relative' })),
+          animate('0.3s', style({ opacity: 1, width: 'calc(100vw - 40px)', position: 'relative' })),
         ],
         { optional: true }
       ),

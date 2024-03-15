@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 
 
 @Injectable()
-export class NoopInterceptor implements HttpInterceptor {
+export class LoaderInterceptor implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler):
     Observable<HttpEvent<any>> {
     return next.handle(req);

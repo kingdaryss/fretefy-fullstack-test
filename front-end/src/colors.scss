@@ -1,0 +1,131 @@
+:root {
+  --orange-red: #ff3d00;
+  --light: #f2f4f8;
+  --midnight-blue: #003250;
+  --black-opacity: rgba(7, 15, 26, .1);
+  --azul: #003250;
+  --black-2: #070f1a;
+  --laranja-escuro: #de5100;
+  --light-grey: #95979b;
+  --acqua: #08b7b7;
+  --medium-turquoise: #5dc3b9;
+  --laranja: #ed7c00;
+  --white: white;
+  --dark-grey: #1f2631;
+  --black: black;
+  --white-smoke: #f4f6f9;
+  --gainsboro: #e4e4e4;
+  --dark-orange: #ce3100;
+  --gray-2023: #f4f6f9;
+  --untitled-ui-gray900: #101828;
+  --untitled-ui-gray200: #eaecf0;
+  --untitled-ui-gray600: #475467;
+  --untitled-ui-gray300: #d0d5dd;
+  --untitled-ui-primary700: #6941c6;
+  --untitled-ui-gray500: #667085;
+  --untitled-ui-gray50: #f9fafb;
+  --untitled-ui-gray100: #f2f4f7;
+  --blue: #6e71dc;
+  --white-opacity-light: rgba(255, 255, 255, .7);
+  --white-opacity-hard: rgba(255, 255, 255, .3);
+  --orange-opacity: rgba(255, 161, 133, .2);
+  --verde-agua: #00ffc0;
+  --untitled-ui-primary100: #f4ebff;
+  --highlight: rgba(97, 141, 141, .2);
+  --highlight-2: rgba(100, 221, 221, .2);
+  --untitled-ui-warning300: #fec84b;
+  --untitled-ui-gray400: #98a2b3;
+  --untitled-ui-primary600: #7f56d9;
+  --untitled-ui-white: white;
+  --untitled-ui-gray700: #344054;
+  --untitled-ui-gray800: #1d2939;
+  --untitled-ui-primary50: #f9f5ff;
+  --untitled-ui-primary800: #53389e;
+  --untitled-ui-pink50: #fdf2fa;
+  --untitled-ui-pink700: #c11574;
+  --untitled-ui-indigo50: #eef4ff;
+  --untitled-ui-indigo700: #3538cd;
+}
+
+
+$black: #000000;
+$white: #fafafa;
+$custom-primary: var(--midnight-blue);
+$custom-accent: #CDDC39;
+$custom-warn:  var(--orange-red);
+
+$custom-brand-primary: (
+  50: '#edf3e7',
+  100: '#d2e2c3',
+  200: '#b4cf9c',
+  300: '#95bc74',
+  400: '#7fad56',
+  500: $custom-primary,
+  600: '#609732',
+  700: '#558d2b',
+  800: '#4b8324',
+  900: '#3a7217',
+  contrast: (
+    50: $black,
+    100: $black,
+    200: $black,
+    300: $black,
+    400: $white,
+    500: $white,
+    600: $white,
+    700: $white,
+    800: $white,
+    900: $white
+  )
+);
+
+$custom-brand-accent: (
+  50: '#f9fbe7',
+  100: '#f0f5c4',
+  200: '#e6ee9c',
+  300: '#dce774',
+  400: '#d5e157',
+  500: $custom-accent,
+  600: '#c8d833',
+  700: '#c1d32c',
+  800: '#bace24',
+  900: '#aec517',
+  contrast: (
+    50: $black,
+    100: $black,
+    200: $black,
+    300: $white,
+    400: $white,
+    500: $white,
+    600: $white,
+    700: $white,
+    800: $white,
+    900: $white
+  )
+);
+
+$custom-brand-warn: (
+  50: #fbe9e7,
+  100: #ffccbc,
+  200: #ffab91,
+  300: #ff8965,
+  400: #ff6f43,
+  500: $custom-warn,
+  600: #f4501e,
+  700: #e64919,
+  800: #d84215,
+  900: #bf350c,
+  contrast: (
+    50: $black,
+    100: $black,
+    200: $black,
+    300: $black,
+    400: $black,
+    500: $white,
+    600: $white,
+    700: $white,
+    800: $white,
+    900: $white
+  )
+);
+

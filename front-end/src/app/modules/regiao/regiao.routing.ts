@@ -2,8 +2,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { RegiaoComponent } from './regiao.component';
 
 const routes: Routes = [
-  { 
-    path: '',
+  {
+    path: ':id',
     component: RegiaoComponent
   },
 ];

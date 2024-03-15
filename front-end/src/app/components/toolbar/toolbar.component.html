@@ -1,6 +1,27 @@
-<ul>
-  <li>
-    <a [routerLink]="['/home']" routerLinkActive="active">Home</a>
-    <a [routerLink]="['/regiao']" routerLinkActive="active">Região</a>
-  </li>
-</ul>
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <mat-icon class="material-symbols-outlined">location_on</mat-icon>
+    <span style="margin-left:5px;">Fretefy</span>
+    <span class="spacer"></span>
+    <button mat-icon-button>
+      <mat-icon class="material-symbols-outlined">notifications</mat-icon>
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<div class="navbar">
+  <mat-chip-list class="example-chip" cdkDropList cdkDropListOrientation="horizontal">
+    <mat-chip routerLink="home" routerLinkActive="mat-chip-active" class="example-box" cdkDrag>
+      <span class=""> Regiões / Home </span>
+    </mat-chip>
+    <mat-chip routerLink="regiao/nordeste" routerLinkActive="mat-chip-active" class="example-box" cdkDrag>
+      <span> Região Nordeste </span>
+    </mat-chip>
+  </mat-chip-list>
+</div>
+
+
+<!--
+<a [routerLink]="['/home']" routerLinkActive="active">Home</a>
+<a [routerLink]="['/regiao']" routerLinkActive="active">Região</a>
+-->
