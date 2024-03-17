@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Animations } from './core/animations/animations';
-import { ChildrenOutletContexts } from '@angular/router';
+import { ChildrenOutletContexts, OutletContext } from '@angular/router';
 import { locale, loadMessages } from 'devextreme/localization';
 
 import * as ptMessages from 'devextreme/localization/messages/pt.json';
@@ -12,15 +12,12 @@ import * as ptMessages from 'devextreme/localization/messages/pt.json';
   animations: [Animations.routeFadeAnimation]
 })
 export class AppComponent {
-  title = 'Fretefy';
-
+  title: string = 'Fretefy';
   constructor(private contexts: ChildrenOutletContexts){
-    loadMessages(ptMessages)
+    loadMessages(ptMessages);
     locale('pt');
   }
-
-  getRouteAnimationData() {
+  getRouteAnimationData(): OutletContext {
     return this.contexts.getContext('primary')?.route?.snapshot?.data?.['animation'];
   }
-
 }

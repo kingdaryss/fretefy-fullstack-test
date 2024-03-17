@@ -1,15 +1,14 @@
 
 ::ng-deep mat-toolbar {
-
   display: inline-block;
   margin: 0;
   width: 100%;
   .spacer {
     flex: 1 1 auto;
   }
-  .mat-toobar-row {
+  .mat-toolbar-row {
     padding: 0 20px;
-    border: 1px solid #e6e9ec;
+    border-bottom: 2px solid #e6e9ec;
   }
 }
 

@@ -10,22 +10,15 @@ import { RouterModule } from '@angular/router';
 import { LoaderInterceptor } from './core/http-interceptors/loader-interceptor';
 import { MatCommonModule } from '@angular/material/core';
 
-
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     RouterModule,
-
     MatCommonModule,
-
     BrowserAnimationsModule,
-
     HomeModule,
     ToolbarModule,
-
     AppRoutingModule
   ],
   providers: [LoaderInterceptor],

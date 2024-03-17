@@ -14,7 +14,6 @@ import { MatSelectModule } from '@angular/material/select';
 @NgModule({
   imports: [
     CommonModule,
-
     MatCommonModule,
     MatCardModule,
     MatFormFieldModule,
@@ -23,7 +22,6 @@ import { MatSelectModule } from '@angular/material/select';
     MatSelectModule,
 
     RegiaoRoutingModule,
-
   ],
   declarations: [RegiaoComponent],
   exports: [RegiaoComponent]

@@ -24,17 +24,20 @@ body { margin: 0; }
   font: size 60%;
 }
 
+.font-weight-bold {
+  font-weight: bold;
+}
+
 .mat-card:not([class*=mat-elevation-z]){
   box-shadow: -3px 1px 1px 0px rgba(0, 0, 0, 0.01), 0px 8px 20px -6px rgba(0, 0, 0, 0.3), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
 }
-.mat-card {
 
+.mat-card {
   padding: 0px !important;
   padding: 10px 25px;
   .mat-card-header {
     padding: 10px 25px;
     border-bottom: 1px solid #e6e9ec;
-
     .mat-card-header-text {
       margin: 0 !important;
     }
@@ -45,7 +48,11 @@ body { margin: 0; }
   .mat-card-content {
     padding: 16px 25px;
   }
+}
 
+.dx-header-row {
+  background-color: var(--light);
+  font-weight: 600;
 }
 
 .dx-datagrid * {

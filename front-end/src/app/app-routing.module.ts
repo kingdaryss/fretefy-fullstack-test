@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, CanActivate } from '@angular/router';
 import { HomeComponent } from './modules/home/home.component';
+import { NavsGuard } from './core/route-guards/navs-guard';
+
 
 const routes: Routes = [
   {
@@ -11,10 +13,12 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
+    canActivate: [NavsGuard],
     data: {animation: 'HomePage'}
   },
   {
     path: 'regiao',
+    canActivate: [NavsGuard],
     loadChildren: () => import('./modules/regiao/regiao.module').then(m => m.RegiaoModule),
     data: {animation: 'RegiaoPage'}
   },

@@ -1,7 +1,6 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
-    <mat-icon class="material-symbols-outlined">location_on</mat-icon>
-    <span style="margin-left:5px;">Fretefy</span>
+    <img width="100" src="https://assets-global.website-files.com/5e1cab8214cecfed4e37dee2/63d7ecd48526af64153b5d8d_fretefy-logo-240x70.png" style="filter: brightness(100);" alt="">
     <span class="spacer"></span>
     <button mat-icon-button>
       <mat-icon class="material-symbols-outlined">notifications</mat-icon>
@@ -11,17 +10,11 @@
 
 <div class="navbar">
   <mat-chip-list class="example-chip" cdkDropList cdkDropListOrientation="horizontal">
-    <mat-chip routerLink="home" routerLinkActive="mat-chip-active" class="example-box" cdkDrag>
-      <span class=""> Regiões / Home </span>
-    </mat-chip>
-    <mat-chip routerLink="regiao/nordeste" routerLinkActive="mat-chip-active" class="example-box" cdkDrag>
-      <span> Região Nordeste </span>
+    <mat-chip *ngFor="let link of navsLinks" [routerLink]="link.url" routerLinkActive="mat-chip-active" class="example-box" cdkDrag>
+      <span> {{ link.nomeDescritivo }} </span>
+      <!--
+      <mat-icon class="mat-18" style="cursor: pointer;" (click)="removerNavlink()">close</mat-icon>
+      -->
     </mat-chip>
   </mat-chip-list>
 </div>
-
-
-<!--
-<a [routerLink]="['/home']" routerLinkActive="active">Home</a>
-<a [routerLink]="['/regiao']" routerLinkActive="active">Região</a>
--->

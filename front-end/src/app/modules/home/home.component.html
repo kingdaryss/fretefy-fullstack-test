@@ -3,19 +3,30 @@
       <mat-card-title>Regiões</mat-card-title>
       <mat-card-subtitle class="small">Listagem completa das regiões com detalhamento das cidades</mat-card-subtitle>
     </mat-card-header>
-
     <mat-card-content>
       <dx-tree-list
-        [wordWrapEnabled]="true"
-        [dataSource]="dataSource"
-        itemsExpr="cidades"
+        keyExpr="nome" [allowColumnResizing]="true" [autoExpandAll]="true"
+        [wordWrapEnabled]="true" [dataSource]="dataSource" itemsExpr="cidades"
         dataStructure="tree" [columnAutoWidth]="true"  [wordWrapEnabled]="true" rowAlternationEnabled="true"
-        [showRowLines]="true"
-        [showBorders]="true"
-        [columnAutoWidth]="true"
-        [searchPanel]="{visible:true}">
+        [showRowLines]="true" [showBorders]="true" [columnAutoWidth]="true">
         <dxi-column dataField="nome"></dxi-column>
-
+        <dxi-column dataField="status" [width]="100" cellTemplate="statusColumnTemplate"></dxi-column>
+        <dxi-column type="buttons"  [width]="100" caption="Ações" cellTemplate="editColumnTemplate" [allowEditing]="false">
+          <dxi-button name="edit"></dxi-button>
+          <dxi-button name="delete"></dxi-button>
+        </dxi-column>
+        <div *dxTemplate="let d of 'statusColumnTemplate'">
+          <button style="cursor:unset;" *ngIf="d.data.status" mat-icon-button><mat-icon class="font-weight-bold" color="accent">done</mat-icon></button>
+          <button style="cursor:unset;" *ngIf="!d.data.status" mat-icon-button><mat-icon class="font-weight-bold" color="warn">close</mat-icon></button>
+        </div>
+        <div *dxTemplate="let d of 'editColumnTemplate'">
+          <div *ngIf="d.data.parentId === 0">
+            <button mat-icon-button [routerLink]="['/regiao', d.data.nome]"><mat-icon
+              color="primary">edit</mat-icon></button>
+            <button *ngIf="d.data.status" mat-icon-button><mat-icon class="font-weight-bold" color="primary">pause</mat-icon></button>
+            <button *ngIf="!d.data.status" mat-icon-button><mat-icon class="font-weight-bold" color="primary">play</mat-icon></button>
+          </div>
+        </div>
       </dx-tree-list>
     </mat-card-content>
   </mat-card>

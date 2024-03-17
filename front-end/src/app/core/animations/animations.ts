@@ -1,33 +1,24 @@
-import { animate, query, style, transition, trigger } from "@angular/animations";
-
+import { animate, query, style, transition, trigger, AnimationTriggerMetadata } from "@angular/animations";
 
 export class Animations {
-
-  constructor(){}
-
-  static routeFadeAnimation = trigger('routeAnimations', [
-    transition('* => *', [
-      query(':enter', [style({ width: 'calc(100vw - 40px)', opacity: 0, position: 'absolute', })], {
-        optional: true,
-      }),
-      query(
-        ':leave',
-        [
-          style({ opacity: 1 }),
-          animate('0.3s', style({ opacity: 0, width: 'calc(100vw - 40px)', position: 'absolute' })),
-        ],
-        { optional: true }
-      ),
-      query(
-        ':enter',
-        [
-          style({ opacity: 0 }),
-          animate('0.3s', style({ opacity: 1, width: 'calc(100vw - 40px)', position: 'relative' })),
-        ],
-        { optional: true }
-      ),
+  static animationDuration: string = '0.3s';
+  static animationStyles: any = {
+    position: 'absolute',
+    width: 'calc(100vw - 40px)',
+  };
+  static routeFadeAnimation: AnimationTriggerMetadata = trigger('routeAnimations', [
+    transition('* <=> *', [
+      query(':enter', [
+        style({ ...Animations.animationStyles, opacity: 0 }),
+      ], { optional: true }),
+      query(':leave', [
+        style({ opacity: 1 }),
+        animate(Animations.animationDuration, style({ ...Animations.animationStyles, opacity: 0 })),
+      ], { optional: true }),
+      query(':enter', [
+        style({ opacity: 0 }),
+        animate(Animations.animationDuration, style({ ...Animations.animationStyles, opacity: 1 })),
+      ], { optional: true }),
     ]),
-    ]);
-
+  ]);
 }
-
