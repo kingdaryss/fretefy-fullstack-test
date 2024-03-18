@@ -41,6 +41,7 @@ Fiz o desenvolvimento na sexta do dia 15/03, 16/03 não fiz nada e finalizei hoj
 
 Não implementei os testes em Jasmine e Protector pois na entrevista disseram não ser necessário.
 
+Tem algumas coisas que sinto que daria pra ter melhorarado, por exemplo, usar alertas para notificação de cadastro realizado,
+não terminei a implementação que queria fazer da notificação com o sino na toolbar e queria ter deixado melhor o módulo de cadastro, entre outros.
 
-
-Caso encontre algum erro ou impedimento ao rodar o projeto, estou disponível, Agradeço a participação !
+Caso encontre algum erro ou impedimento ao rodar o projeto, estou disponível, Agradeço desde já a participação !
