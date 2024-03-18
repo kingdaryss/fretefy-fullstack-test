@@ -9,19 +9,26 @@ import { ToolbarModule } from './components/toolbar/toolbar.module';
 import { RouterModule } from '@angular/router';
 import { LoaderInterceptor } from './core/http-interceptors/loader-interceptor';
 import { MatCommonModule } from '@angular/material/core';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { LoadingComponent } from './components/loading/loading.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, LoadingComponent],
   imports: [
     BrowserModule,
     RouterModule,
     MatCommonModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     HomeModule,
     ToolbarModule,
     AppRoutingModule
   ],
-  providers: [LoaderInterceptor],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: LoaderInterceptor,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

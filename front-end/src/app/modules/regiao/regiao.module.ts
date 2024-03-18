@@ -8,20 +8,21 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCommonModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
-import { MatSelectModule } from '@angular/material/select';
+import { ReactiveFormsModule } from '@angular/forms';
+import { SelectSearchModule } from 'src/app/components/select-search/select-search.module';
 
 
 @NgModule({
   imports: [
     CommonModule,
+    ReactiveFormsModule,
     MatCommonModule,
     MatCardModule,
     MatFormFieldModule,
     MatButtonModule,
     MatInputModule,
-    MatSelectModule,
-
     RegiaoRoutingModule,
+    SelectSearchModule
   ],
   declarations: [RegiaoComponent],
   exports: [RegiaoComponent]

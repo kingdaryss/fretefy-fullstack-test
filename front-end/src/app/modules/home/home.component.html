@@ -4,29 +4,42 @@
       <mat-card-subtitle class="small">Listagem completa das regiões com detalhamento das cidades</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
+      <div class="toolbar">
+        <button class="font-weight-bold" color="accent" #tooltip="matTooltip" matTooltip="Clique para adicionar nova região" matTooltipPosition="above" mat-stroked-button routerLink="/regiao">
+          <mat-icon class="font-weight-bold" >add</mat-icon>
+          Adicionar
+        </button>
+      </div>
       <dx-tree-list
-        keyExpr="nome" [allowColumnResizing]="true" [autoExpandAll]="true"
-        [wordWrapEnabled]="true" [dataSource]="dataSource" itemsExpr="cidades"
-        dataStructure="tree" [columnAutoWidth]="true"  [wordWrapEnabled]="true" rowAlternationEnabled="true"
-        [showRowLines]="true" [showBorders]="true" [columnAutoWidth]="true">
-        <dxi-column dataField="nome"></dxi-column>
+        [dataSource]="dataSource$ | async" itemsExpr="citys" keyExpr="name"
+        dataStructure="tree" rowAlternationEnabled="true" [loadPanel]="{ enabled: false }"
+        [allowColumnResizing]="true" [autoExpandAll]="true"
+        [wordWrapEnabled]="true" [columnAutoWidth]="true"
+        [showRowLines]="true" [showBorders]="true">
+
+        <dxi-column dataField="name"></dxi-column>
         <dxi-column dataField="status" [width]="100" cellTemplate="statusColumnTemplate"></dxi-column>
-        <dxi-column type="buttons"  [width]="100" caption="Ações" cellTemplate="editColumnTemplate" [allowEditing]="false">
-          <dxi-button name="edit"></dxi-button>
-          <dxi-button name="delete"></dxi-button>
-        </dxi-column>
+        <dxi-column type="buttons"  [width]="100" caption="Ações" cellTemplate="editColumnTemplate" [allowEditing]="false"></dxi-column>
+
         <div *dxTemplate="let d of 'statusColumnTemplate'">
           <button style="cursor:unset;" *ngIf="d.data.status" mat-icon-button><mat-icon class="font-weight-bold" color="accent">done</mat-icon></button>
           <button style="cursor:unset;" *ngIf="!d.data.status" mat-icon-button><mat-icon class="font-weight-bold" color="warn">close</mat-icon></button>
         </div>
+
         <div *dxTemplate="let d of 'editColumnTemplate'">
           <div *ngIf="d.data.parentId === 0">
-            <button mat-icon-button [routerLink]="['/regiao', d.data.nome]"><mat-icon
+            <button  #tooltip="matTooltip" matTooltip="Clique para editar a região" matTooltipPosition="above" mat-icon-button [routerLink]="['/regiao', d.data.name]"><mat-icon
               color="primary">edit</mat-icon></button>
-            <button *ngIf="d.data.status" mat-icon-button><mat-icon class="font-weight-bold" color="primary">pause</mat-icon></button>
-            <button *ngIf="!d.data.status" mat-icon-button><mat-icon class="font-weight-bold" color="primary">play</mat-icon></button>
+            <button mat-icon-button *ngIf="d.data.status" (click)="update(d.data, !d.data.status)" #tooltip="matTooltip" matTooltip="Clique para desativar" matTooltipPosition="above">
+              <mat-icon  class="font-weight-bold" color="primary">pause</mat-icon>
+            </button>
+            <button mat-icon-button *ngIf="!d.data.status" (click)="update(d.data, !d.data.status)" #tooltip="matTooltip" matTooltip="Clique para ativar" matTooltipPosition="above">
+              <mat-icon class="font-weight-bold" color="primary">play_arrow</mat-icon>
+            </button>
           </div>
         </div>
       </dx-tree-list>
+
     </mat-card-content>
+
   </mat-card>

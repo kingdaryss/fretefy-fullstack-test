@@ -1,56 +1,46 @@
-# FretefyFullstack
+# FretefyFrontend
 
-Inicialmente não sabia se era mais prático dar um ng update do projeto para uma versão mais recente do Angular, por ele ser um projeto mais cru e fácil de atualizar as dependencias, ou se eu trocava a versão do Node JS e usar assim, optei por trocar a versão do Node e assumir os riscos. Pois é um projeto de teste e caso alguma das bibliotecas que eu fosse usar não tiver mais suporte eu atualizaria depois, mas em um projeto real normalmente pegaria uma versão mais recente para justamente evitar o risco de perder o suporte de manutenção.
+Inicialmente não sabia se era mais prático dar um ng update do projeto para uma versão mais recente do Angular, ou se usava o nvm pra trocar a versão do meu node, optei por trocar a versão do node e assumir os riscos de perder o suporte do Angular na versão antiga e mostrar que conseguiria trabalhar em um projeto legado, julgando que eu estivesse trabalhando em um projeto legado cujo a versão fosse menor e dificil de ser atualizada.
 
-Versões bases de configuração do projeto utilizadas:
+## Versões bases de configuração do projeto utilizadas:
 
 Angular 	-->		10.2.0 	
 Node JS 	-->  		^10.13.0 || ^12.11.0
 Typescript 	--> 		>=3.9.0 <4.1.0	
 RXJS 		-->		^6.5.3
 
-## Fonte: https://angular.io/guide/versions#unsupported-angular-versions
+Fonte: https://angular.io/guide/versions#unsupported-angular-versions
 
 
-## Projeto
+## Funcionalidades do Projeto
+
+-> Módulo de Loader genérico.
+-> Módulo de Navbar interativo.
+-> Componente de select search com desenvolvimento focado em carregamento pesado de dados.
+-> Treelist para exibição dos dados na home.
+-> Shared com as entidades e services genéricos.
+-> Tooltips
+-> Demais funcionalidades de requisitos (Validator duplicado, Tooltips, Requireds e utilizado diversos operadores rxJS).
+
+
+## Contextualização
+
+Primeiramente realizei estruturação de um projeto para possuir uma ampla escalabilidade.
+
+Sofri alguns problemas principalmente do devextreme pela falta de recurso na lib que utilizei por não ter suporte nas versões recentes dele para versão do Angular na 10.
+
+Após a estruturação da base, iniciei o desenvolvimento dos requisitos no backlog.
+
+Utilizei o json-server inicialmente para simular o retorno de uma API julgando que nesse tempo não iria conseguir fazer a tempo o backend, justamente pelo impedimento que tive com os recursos da lib que estava utilizando.
+
+Não utilizei nenhum tipo de grid como o flexbox por exemplo, pois não encontrei algo realmente necessário, mas conheço bem a tecnologia.
+
+Tentei usar um pouco de cada coisa para demonstrar algumas técnicas que conheço, tem outras funcionalidades também mas achei que se implementasse não daria tempo de entregar na segunda-feira que era meu planejado.
+
+Fiz o desenvolvimento na sexta do dia 15/03, 16/03 não fiz nada e finalizei hoje no dia 17/03.
+
+Não implementei os testes em Jasmine e Protector pois na entrevista disseram não ser necessário.
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-## Angular Configs
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Caso encontre algum erro ou impedimento ao rodar o projeto, estou disponível, Agradeço a participação !

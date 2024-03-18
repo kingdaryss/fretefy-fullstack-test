@@ -1,4 +1,4 @@
-import { animate, query, style, transition, trigger, AnimationTriggerMetadata } from "@angular/animations";
+import { animate, query, style, transition, trigger, AnimationTriggerMetadata, state } from "@angular/animations";
 
 export class Animations {
   static animationDuration: string = '0.3s';
@@ -21,4 +21,9 @@ export class Animations {
       ], { optional: true }),
     ]),
   ]);
+
+  static fadeOutAnimation: AnimationTriggerMetadata = trigger('fadeInOut', [
+    state('void', style({ opacity: 0 })),
+    transition('void <=> *', animate(300)),
+  ])
 }

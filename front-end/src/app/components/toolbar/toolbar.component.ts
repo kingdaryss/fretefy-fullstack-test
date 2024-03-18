@@ -1,32 +1,21 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ToolbarService, navLinkChips } from './toolbar.service';
-import { Subscription } from 'rxjs';
-import { Router } from '@angular/router';
+import { Observable, Subscription } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-toolbar',
   templateUrl: './toolbar.component.html',
   styleUrls: ['./toolbar.component.scss']
 })
-export class ToolbarComponent implements OnInit, OnDestroy {
-  navsLinks: navLinkChips[] = [];
-  subscription: Subscription;
-  constructor(private toolbarService: ToolbarService, private route: Router) {}
+export class ToolbarComponent implements OnInit {
+  navsLinks$: Observable<navLinkChips[]>;
+  constructor(private toolbarService: ToolbarService, private activatedRoute: ActivatedRoute) {}
   ngOnInit(): void {
-    this.subscription = this.toolbarService.navsChips$.subscribe(
-      (response) => {
-        this.navsLinks = response;
-      }
-    )
+    this.navsLinks$ = this.toolbarService.navsChips$
   }
-  ngOnDestroy(): void {
-    this.subscription?.unsubscribe()
-  }
-  removerNavlink(): void {
-    this.route.navigate([this.navsLinks[0].url])
-    this.navsLinks = this.navsLinks.filter(()=>{[]
-
-    })
-    this.toolbarService.atualizarNavs(this.navsLinks)
+  removeNavLink(nav: navLinkChips): void {
+    console.log(this.activatedRoute)
+    this.toolbarService.remove(nav)
   }
 }

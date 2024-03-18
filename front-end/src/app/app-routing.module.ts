@@ -18,7 +18,6 @@ const routes: Routes = [
   },
   {
     path: 'regiao',
-    canActivate: [NavsGuard],
     loadChildren: () => import('./modules/regiao/regiao.module').then(m => m.RegiaoModule),
     data: {animation: 'RegiaoPage'}
   },

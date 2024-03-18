@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { Animations } from './core/animations/animations';
 import { ChildrenOutletContexts, OutletContext } from '@angular/router';
 import { locale, loadMessages } from 'devextreme/localization';
-
 import * as ptMessages from 'devextreme/localization/messages/pt.json';
 
 @Component({

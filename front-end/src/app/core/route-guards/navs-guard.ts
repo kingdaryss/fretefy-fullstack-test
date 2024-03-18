@@ -11,7 +11,9 @@ export class NavsGuard implements CanActivate {
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-      this.toolbarService.atualizarNavs([{nomeDescritivo: 'Regiões / Home', url: 'home'}, {nomeDescritivo: 'Região Nordeste', url: 'regiao/Nordeste'}, {nomeDescritivo: 'Região Sul', url: 'regiao/Sul'}]);
+      if (next.params['id']) {
+        this.toolbarService.update({name: `Região / ${next.params['id']}` , url: state.url, isRemove: true});
+      }
       return true;
   }
 }

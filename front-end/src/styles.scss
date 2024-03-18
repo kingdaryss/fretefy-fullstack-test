@@ -48,6 +48,14 @@ body { margin: 0; }
   .mat-card-content {
     padding: 16px 25px;
   }
+  .mat-card-actions {
+    padding-bottom: 10px !important;
+    padding: 10px 25px;
+    border-top: 1px solid #e6e9ec;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+  }
 }
 
 .dx-header-row {

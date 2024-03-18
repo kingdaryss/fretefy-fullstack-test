@@ -10,6 +10,9 @@ import { RouterModule } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 
+import { MatTooltipModule } from '@angular/material/tooltip';
+
+
 @NgModule({
   imports: [
     CommonModule,
@@ -18,7 +21,8 @@ import { MatButtonModule } from '@angular/material/button';
     MatCardModule,
     MatIconModule,
     MatButtonModule,
-    DxTreeListModule
+    DxTreeListModule,
+    MatTooltipModule
   ],
   declarations: [HomeComponent],
   exports: [HomeComponent]

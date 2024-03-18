@@ -10,11 +10,9 @@
 
 <div class="navbar">
   <mat-chip-list class="example-chip" cdkDropList cdkDropListOrientation="horizontal">
-    <mat-chip *ngFor="let link of navsLinks" [routerLink]="link.url" routerLinkActive="mat-chip-active" class="example-box" cdkDrag>
-      <span> {{ link.nomeDescritivo }} </span>
-      <!--
-      <mat-icon class="mat-18" style="cursor: pointer;" (click)="removerNavlink()">close</mat-icon>
-      -->
+    <mat-chip *ngFor="let nav of navsLinks$ | async" [routerLink]="nav.url" routerLinkActive="mat-chip-active" class="example-box" cdkDrag>
+      <span> {{ nav.name }} </span>
+      <mat-icon *ngIf="nav.isRemove" class="mat-18" style="cursor: pointer;" (click)="removeNavLink(nav)">close</mat-icon>
     </mat-chip>
   </mat-chip-list>
 </div>
