@@ -42,9 +42,9 @@ Fonte: https://angular.io/guide/versions#unsupported-angular-versions
 
 ## Imagens demonstrativas
 
-<img src="/tela_home.png">
+<img src="tela_home.png">
 
-<img src="/tela_cadastro.png">
+<img src="tela_cadastro.png">
 
 ## Contextualização
 
