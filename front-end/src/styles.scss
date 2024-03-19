@@ -1,13 +1,4 @@
-@import '~@angular/material/theming';
-@include mat-core();
 @import 'colors';
-
-$app-primary: mat-palette($custom-brand-primary);
-$app-accent: mat-palette($custom-brand-accent);
-$app-warn: mat-palette($custom-brand-warn);
-$brand-light-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
-
-@include angular-material-theme($brand-light-theme);
 
 * {
   font-family: Roboto;
@@ -24,48 +15,14 @@ body { margin: 0; }
   font: size 60%;
 }
 
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0
+}
+
+.material-symbols-outlined.fill {
+  font-variation-settings: 'FILL' 1
+}
 .font-weight-bold {
   font-weight: bold;
 }
 
-.mat-card:not([class*=mat-elevation-z]){
-  box-shadow: -3px 1px 1px 0px rgba(0, 0, 0, 0.01), 0px 8px 20px -6px rgba(0, 0, 0, 0.3), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
-}
-
-.mat-card {
-  padding: 0px !important;
-  padding: 10px 25px;
-  .mat-card-header {
-    padding: 10px 25px;
-    border-bottom: 1px solid #e6e9ec;
-    .mat-card-header-text {
-      margin: 0 !important;
-    }
-    .mat-card-subtitle {
-      margin-bottom: 8px;
-    }
-  }
-  .mat-card-content {
-    padding: 16px 25px;
-  }
-  .mat-card-actions {
-    padding-bottom: 10px !important;
-    padding: 10px 25px;
-    border-top: 1px solid #e6e9ec;
-    display: flex;
-    justify-content: end;
-    align-items: center;
-  }
-}
-
-.dx-header-row {
-  background-color: var(--light);
-  font-weight: 600;
-}
-
-.dx-datagrid * {
-  border-color: #eaecf0 !important;
-  .dx-row-alt > td, .dx-datagrid .dx-row-alt > tr > td {
-    background-color: #f4f6f9 !important;
-  }
-}
