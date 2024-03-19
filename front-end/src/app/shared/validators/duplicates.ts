@@ -31,7 +31,11 @@ export function uniqueValidator(): ValidatorFn {
       const nameControl = group.get('name');
       if (nameControl) {
         if (uniqueIndexes.has(index)) {
-          nameControl.setErrors(null);
+          const errors = nameControl.errors;
+          if (errors) {
+            delete errors['duplicateValue'];
+            nameControl.setErrors(Object.keys(errors).length > 0 ? errors : null);
+          }
         } else {
           nameControl.setErrors({ duplicateValue: true });
         }
