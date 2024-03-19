@@ -21,6 +21,8 @@ RXJS 		-->		^6.5.3
 Fonte: https://angular.io/guide/versions#unsupported-angular-versions
 
 
+<br/><br/><br/><br/><br/>
+
 # Parte 1
 
 ## Funcionalidades do Projeto
@@ -64,6 +66,7 @@ Não implementei os testes em Jasmine e Protector pois disseram não ser necess�
 <br/>
 Caso encontre algum erro ou impedimento ao rodar o projeto, estou disponível, Agradeço desde já a participação !
 
+<br/><br/><br/><br/><br/>
 
 # Parte 2
 
