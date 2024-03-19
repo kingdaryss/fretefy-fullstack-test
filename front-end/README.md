@@ -81,12 +81,6 @@ Iniciando dia 19/03
 
 Prazo final Sexta-feira 22/03 às 23:59.
 
-## Versões bases de configuração do projeto utilizadas:
+## Imagens demonstrativas
 
-Angular 	-->		10.2.0 	
-<br/>
-Node JS 	-->  		^10.13.0 || ^12.11.0
-<br/>
-Typescript 	--> 		>=3.9.0 <\4.1.0	
-<br/>
-RXJS 		-->		^6.5.3
+Em construção...
