@@ -1,13 +1,5 @@
 # FretefyFrontend
 
-Projeto se encontra mantida na branch do fork sendo feature/estrutura
-
-Inicialmente não sabia se era mais prático dar um ng update do projeto para uma versão mais recente do Angular,<br/> ou se usava o nvm pra trocar a versão do meu node,<br/> optei por trocar a versão do node e assumir os riscos de perder o suporte do Angular na versão antiga e mostrar que conseguiria trabalhar em um projeto legado,<br/> julgando que eu estivesse trabalhando em um projeto legado cujo a versão fosse menor e dificil de ser atualizada.
-
-<br/>
-Realizado em dois dias
-Iniciando dia 15/03 -> Descanso 16/03 -> Finalizado dia 17/03
-
 ## Versões bases de configuração do projeto utilizadas:
 
 Angular 	-->		10.2.0 	
@@ -24,6 +16,14 @@ Fonte: https://angular.io/guide/versions#unsupported-angular-versions
 <br/><br/><br/><br/><br/>
 
 # Parte 1
+
+Projeto se encontra mantida na branch do fork sendo feature/estrutura
+
+Inicialmente não sabia se era mais prático dar um ng update do projeto para uma versão mais recente do Angular,<br/> ou se usava o nvm pra trocar a versão do meu node,<br/> optei por trocar a versão do node e assumir os riscos de perder o suporte do Angular na versão antiga e mostrar que conseguiria trabalhar em um projeto legado,<br/> julgando que eu estivesse trabalhando em um projeto legado cujo a versão fosse menor e dificil de ser atualizada.
+
+<br/>
+Realizado em dois dias
+Iniciando dia 15/03 -> Descanso 16/03 -> Finalizado dia 17/03
 
 ## Funcionalidades do Projeto
 
