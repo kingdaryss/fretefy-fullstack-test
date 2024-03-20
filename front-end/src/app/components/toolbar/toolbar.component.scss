@@ -3,9 +3,11 @@
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000;
+  z-index: 99999;
 }
-
+.wrapper + .wrapper-relative {
+  height: 118px;
+}
 .toolbar {
   background-color: var(--midnight-blue);
   width: 100%;
@@ -15,7 +17,7 @@
   box-sizing: border-box;
   flex-direction: column;
   letter-spacing: normal;
-  border-bottom: 2px solid #e6e9ec;
+  height:64px;
   .toolbar-row {
     display: flex;
     align-items: center;
@@ -33,23 +35,15 @@
     }
   }
 }
-
 .navbar {
+  height: 50px;
   flex-wrap: nowrap !important;
   overflow-x: auto;
   padding: 5px 20px;
+  height:44px;
   @media only screen and (max-width: 600px) {
     padding: 5px 10px;
   }
   background-color: var(--light);
   box-shadow: -3px 1px 1px 0px rgba(0, 0, 0, 0.01), 0px 8px 20px -6px rgba(0, 0, 0, 0.3), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
-  .route-active {
-    color: white !important;
-    background-color: var(--midnight-blue) !important;
-  }
-  .example-box {
-    transition: .3s;
-    text-wrap: nowrap;
-    cursor:pointer;
-  }
 }

@@ -24,7 +24,7 @@
         <ng-template let-item>
           <app-button appIcon [routerLink]="['/regiao', item.name]"><span class="material-symbols-outlined">edit</span></app-button>
           <app-button appIcon (click)="update(item, !item.status)">
-            <span class="material-symbols-outlined fill font-weight-bold text-primary">{{ item.status ? 'stop' : 'play_arrow'  }}</span>
+            <span class="material-symbols-outlined fill font-weight-bold text-primary">{{ item.status ? 'pause' : 'play_arrow'  }}</span>
           </app-button>
         </ng-template>
       </app-column>

@@ -7,7 +7,7 @@
   line-height: 24px;
   position: relative;
   border: none;
-  border-radius: 2px;
+  border-radius: 4px;
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
@@ -35,7 +35,7 @@
   transform: scale(0);
   transition: transform 0.2s ease;
   pointer-events: none;
-  filter: blur(5%);
+  filter: blur(10px);
 }
 .ripple:active::before, .ripple:focus::before {
   transform: scale(3);
@@ -43,6 +43,9 @@
 ::ng-deep app-button + app-button {
   margin-right: 8px;
   margin-left: 8px;
+}
+::ng-deep app-button {
+  background-color: transparent !important;
 }
 ::ng-deep app-button .ripple.normal {
   background-color: transparent;
@@ -57,4 +60,6 @@
   padding: 10px 10px;
 }
 
-
+.active {
+  background-color: red;
+}
