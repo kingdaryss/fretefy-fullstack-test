@@ -6,7 +6,7 @@
   z-index: 99999;
 }
 .wrapper + .wrapper-relative {
-  height: 118px;
+  height: 110px;
 }
 .toolbar {
   background-color: var(--midnight-blue);
@@ -36,11 +36,9 @@
   }
 }
 .navbar {
-  height: 50px;
   flex-wrap: nowrap !important;
   overflow-x: auto;
   padding: 5px 20px;
-  height:44px;
   @media only screen and (max-width: 600px) {
     padding: 5px 10px;
   }

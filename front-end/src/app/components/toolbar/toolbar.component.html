@@ -9,7 +9,7 @@
     </div>
   </div>
   <div class="navbar">
-    <app-button *ngFor="let nav of navsLinks$ | async" [routerLink]="nav.url" routerLinkActive="primary">
+    <app-button appSmallButton *ngFor="let nav of navsLinks$ | async" [routerLink]="nav.url" routerLinkActive="primary">
       {{ nav.name }}
       <span *ngIf="nav.isRemove" class="material-symbols-outlined" style="cursor: pointer;" (click)="removeNavLink(nav)">close</span>
     </app-button>

@@ -3,9 +3,10 @@
   border-radius: 4px;
   box-shadow: -3px 1px 1px 0px rgba(0, 0, 0, 0.01), 0px 8px 20px -3px rgba(0, 0, 0, 0.3), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
 }
-.card-header {
+.app-card-header {
   font-weight: bold;
-  padding: 0 20px;
+  padding: 10px 20px;
+  border-bottom: 1px solid var(--gainsboro);
   padding-top: 20px;
 }
 ::ng-deep app-card-header .app-card-title {
@@ -13,19 +14,23 @@
     display: block;
     margin-bottom: 12px;
     font-size: 20px;
-    color:rgba(0,0,0,.87);
+    color:rgba(0, 0, 0, .87);
 }
 ::ng-deep app-card-header .app-card-subtitle {
     margin-top: -8px;
     display: block;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     font-size: 14px;
-    color:rgba(0,0,0,.54);
+    color:rgba(0, 0, 0, .54);
     font-weight: normal;
 }
-.card-content {
-  padding: 0 20px;
+.app-card-content {
+  padding: 20px 20px;
 }
-.card-footer {
-  padding: 20px;
+.app-card-footer {
+  border-top: 1px solid var(--gainsboro);
+  padding: 10px 20px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
 }

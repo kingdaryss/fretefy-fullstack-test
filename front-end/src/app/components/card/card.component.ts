@@ -1,19 +1,19 @@
 import { Component } from '@angular/core';
 @Component({
   selector: 'app-card-header',
-  template: `<ng-content></ng-content>`,
+  template: `<div class='app-card-header'><ng-content></ng-content></div>`,
   styleUrls: ['./card.component.scss']
 })
 export class CardHeaderComponent {}
 @Component({
   selector: 'app-card-content',
-  template: `<ng-content></ng-content>`,
+  template: `<div class='app-card-content'><ng-content></ng-content></div>`,
   styleUrls: ['./card.component.scss']
 })
 export class CardContentComponent {}
 @Component({
   selector: 'app-card-footer',
-  template: `<ng-content></ng-content>`,
+  template: `<div class='app-card-footer'><ng-content></ng-content></div>`,
   styleUrls: ['./card.component.scss']
 })
 export class CardFooterComponent {}

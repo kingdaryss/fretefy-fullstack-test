@@ -1,8 +1,8 @@
 import { Directive, ElementRef, OnInit, Renderer2 } from '@angular/core';
 @Directive({
-  selector: '[appIcon]'
+  selector: '[appSmallButton]'
 })
-export class IconDirective implements OnInit {
+export class SmallButtonDirective implements OnInit {
   constructor(private elementRef: ElementRef, private renderer: Renderer2) {}
-  ngOnInit(): void { this.renderer.addClass(this.elementRef.nativeElement, 'transparent'); }
+  ngOnInit(): void { this.renderer.addClass(this.elementRef.nativeElement, 'small-app-button'); }
 }
