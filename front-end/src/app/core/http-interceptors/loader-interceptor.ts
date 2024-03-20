@@ -3,18 +3,16 @@ import { HttpEvent, HttpInterceptor, HttpHandler, HttpRequest } from '@angular/c
 import { Observable } from 'rxjs';
 import { finalize } from 'rxjs/operators';
 import { LoaderService } from 'src/app/components/loading/loader.service';
-
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable({ providedIn: 'root' })
 export class LoaderInterceptor implements HttpInterceptor {
   constructor(private loaderService: LoaderService) {}
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     this.loaderService.showLoader();
-    localStorage.setItem('loading-' + req.url, 'true')
+    const url = 'loading-' + req.url
+    localStorage.setItem(url, 'true')
     return next.handle(req).pipe(
       finalize(() => {
-        localStorage.removeItem('loading-' + req.url);
+        localStorage.removeItem(url);
         this.loaderService.hideLoader();
       })
     );

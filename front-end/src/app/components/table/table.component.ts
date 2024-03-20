@@ -1,12 +1,10 @@
 import { Component, ContentChildren, QueryList, AfterContentInit, TemplateRef, Input, ContentChild } from '@angular/core';
 import { Observable } from 'rxjs';
-
 export interface ColumnDataTable {
   caption: string;
   template: TemplateRef<any>;
   styles: any;
 }
-
 @Component({ selector: 'app-toolbar', template: `<ng-content></ng-content>` })
 export class TableToolbarComponent {
   @ContentChild(TemplateRef) template: TemplateRef<any>;
@@ -27,7 +25,6 @@ export class TableColumnComponent {
     }
   }
 }
-
 @Component({ selector: 'app-table', templateUrl: './table.component.html', styleUrls: ['./table.component.scss'] })
 export class TableComponent implements AfterContentInit {
   @ContentChildren(TableColumnComponent) columnComponent: QueryList<TableColumnComponent>;
@@ -37,7 +34,6 @@ export class TableComponent implements AfterContentInit {
   @Input() data: any[] | Observable<any[]> = [];
   ngAfterContentInit() {
     this.columns = this.columnComponent.toArray().map(column => ({ caption: column.caption, template: column.template, styles: column.style() }));
-    console.log(this.toolbarComponent)
     this.toolbar = this.toolbarComponent.first.template;
   }
 }

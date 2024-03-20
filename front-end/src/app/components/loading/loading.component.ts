@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { LoaderService } from './loader.service';
 import { Observable } from 'rxjs';
 import { Animations } from 'src/app/core/animations/animations';
-
 @Component({
   selector: 'app-loading',
   templateUrl: './loading.component.html',

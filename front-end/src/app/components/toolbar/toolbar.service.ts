@@ -1,12 +1,10 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-
 export interface navLinkChips {
   name: string;
   url: string;
   isRemove: boolean;
 }
-
 @Injectable({
   providedIn: 'root'
 })

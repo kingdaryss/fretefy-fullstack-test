@@ -1,5 +1,4 @@
 import { animate, query, style, transition, trigger, AnimationTriggerMetadata, state } from "@angular/animations";
-
 export class Animations {
   static animationDuration: string = '0.3s';
   static animationStyles: any = {
@@ -21,7 +20,6 @@ export class Animations {
       ], { optional: true }),
     ]),
   ]);
-
   static fadeOutAnimation: AnimationTriggerMetadata = trigger('fadeInOut', [
     state('void', style({ opacity: 0 })),
     transition('void <=> *', animate(300)),

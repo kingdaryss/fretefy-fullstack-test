@@ -10,9 +10,7 @@ import { Observable } from 'rxjs';
 })
 export class HomeComponent implements OnInit {
   dataSource$: Observable<Regiao[]>;
-
   constructor(private homeService: HomeService) { }
-
   refresh(): void { this.dataSource$ = this.homeService.all() }
   update(item: any, status: boolean): void {
     this.homeService.get(item.name).subscribe((response: Regiao) => {

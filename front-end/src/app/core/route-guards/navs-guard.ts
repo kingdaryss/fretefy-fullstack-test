@@ -12,7 +12,7 @@ export class NavsGuard implements CanActivate {
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
       if (next.params['id']) {
-        this.toolbarService.update({name: `Região / ${next.params['id']}` , url: state.url, isRemove: true});
+        this.toolbarService.update({name: `${next.data['name']} / ${next.params['id']}` , url: state.url, isRemove: true});
       }
       return true;
   }

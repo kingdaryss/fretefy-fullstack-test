@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Animations } from './core/animations/animations';
 import { ChildrenOutletContexts, OutletContext } from '@angular/router';
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

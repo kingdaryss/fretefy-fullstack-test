@@ -8,7 +8,6 @@ import { HomeModule } from './modules/home/home.module';
 import { ToolbarModule } from './components/toolbar/toolbar.module';
 import { RouterModule } from '@angular/router';
 import { LoaderInterceptor } from './core/http-interceptors/loader-interceptor';
-import { MatCommonModule } from '@angular/material/core';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { LoadingComponent } from './components/loading/loading.component';
 
@@ -17,7 +16,6 @@ import { LoadingComponent } from './components/loading/loading.component';
   imports: [
     BrowserModule,
     RouterModule,
-    MatCommonModule,
     BrowserAnimationsModule,
     HttpClientModule,
     HomeModule,

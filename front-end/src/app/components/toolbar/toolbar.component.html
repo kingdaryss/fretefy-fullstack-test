@@ -1,18 +1,17 @@
-<mat-toolbar style="background-color: var(--midnight-blue);" color="primary">
-  <mat-toolbar-row>
-    <img width="100" src="https://assets-global.website-files.com/5e1cab8214cecfed4e37dee2/63d7ecd48526af64153b5d8d_fretefy-logo-240x70.png" style="filter: brightness(100);" alt="">
-    <span class="spacer"></span>
-    <button mat-icon-button>
-      <mat-icon class="material-symbols-outlined">notifications</mat-icon>
-    </button>
-  </mat-toolbar-row>
-</mat-toolbar>
-
-<div class="navbar">
-  <mat-chip-list class="example-chip" cdkDropList cdkDropListOrientation="horizontal">
-    <mat-chip *ngFor="let nav of navsLinks$ | async" [routerLink]="nav.url" routerLinkActive="mat-chip-active" class="example-box" cdkDrag>
-      <span> {{ nav.name }} </span>
-      <mat-icon *ngIf="nav.isRemove" class="mat-18" style="cursor: pointer;" (click)="removeNavLink(nav)">close</mat-icon>
-    </mat-chip>
-  </mat-chip-list>
+<div class="wrapper">
+  <div class="toolbar">
+    <div class="toolbar-row">
+      <img width="100" src="https://assets-global.website-files.com/5e1cab8214cecfed4e37dee2/63d7ecd48526af64153b5d8d_fretefy-logo-240x70.png" style="filter: brightness(100);" alt="">
+      <span class="spacer"></span>
+      <app-button appIcon>
+        <span class="material-symbols-outlined text-white">notifications</span>
+      </app-button>
+    </div>
+  </div>
+  <div class="navbar">
+    <app-button *ngFor="let nav of navsLinks$ | async" [routerLink]="nav.url" routerLinkActive="activated" >
+      {{ nav.name }}
+      <span *ngIf="nav.isRemove" class="material-symbols-outlined" style="cursor: pointer;" (click)="removeNavLink(nav)">close</span>
+    </app-button>
+  </div>
 </div>

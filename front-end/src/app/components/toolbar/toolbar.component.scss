@@ -1,31 +1,49 @@
-
-::ng-deep mat-toolbar {
-  display: inline-block;
-  margin: 0;
+.wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  .spacer {
-    flex: 1 1 auto;
-  }
-  .mat-toolbar-row {
+  z-index: 1000;
+}
+
+.toolbar {
+  background-color: var(--midnight-blue);
+  width: 100%;
+  margin: 0;
+  color: var(--white);
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  letter-spacing: normal;
+  border-bottom: 2px solid #e6e9ec;
+  .toolbar-row {
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
     padding: 0 20px;
-    border-bottom: 2px solid #e6e9ec;
+    white-space: nowrap;
+    flex-direction: row;
+    width:100%;
+    min-height: 64px;
+    .spacer {
+      flex: 1 1 auto;
+    }
     @media only screen and (max-width: 600px) {
       padding: 0 10px;
     }
   }
 }
 
-::ng-deep .navbar {
+.navbar {
+  flex-wrap: nowrap !important;
+  overflow-x: auto;
   padding: 5px 20px;
   @media only screen and (max-width: 600px) {
     padding: 5px 10px;
   }
   background-color: var(--light);
   box-shadow: -3px 1px 1px 0px rgba(0, 0, 0, 0.01), 0px 8px 20px -6px rgba(0, 0, 0, 0.3), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
-  .mat-standard-chip {
-    border-radius: 6px;
-  }
-  .mat-chip-active {
+  .route-active {
     color: white !important;
     background-color: var(--midnight-blue) !important;
   }
@@ -34,15 +52,4 @@
     text-wrap: nowrap;
     cursor:pointer;
   }
-  .mat-chip-list-wrapper {
-    flex-wrap: nowrap !important;
-    overflow-x: auto;
-  }
-  .example-box.cdk-drag-animating {
-    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
-  }
-  .example-chip .cdk-drop-list-dragging {
-    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
-  }
-
 }
