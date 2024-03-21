@@ -5,19 +5,20 @@
   </app-card-header>
   <app-card-content>
     <form [formGroup]="formGroup" *ngIf="formGroup">
-      <!-- <mat-form-field class="form-field" appearance="outline">
-        <mat-label>Nome da região</mat-label>
-        <input formControlName="name" matInput required>
-      </mat-form-field> -->
+      <app-input formControlName="name" label="Nome da região" required></app-input>
       <br>
       <h4>Locais da região</h4>
-      <!-- <div formArrayName="citys" *ngIf="citysFormArray.controls.length">
+
+      <div formArrayName="citys" *ngIf="citysFormArray.controls.length">
         <div [formGroupName]="i" *ngFor="let city of citysFormArray.controls; let i=index" >
-            <select-search (removeHandler)="removeCity($event)" [index]="i" [showRemoveButton]="citysFormArray.controls.length > 1" [formControl]="city.get('name')" [data$]="citys$" name="Cidade"></select-search>
+            <app-input formControlName="name" label="Nome da região" required></app-input>
           <br>
         </div>
-      </div> -->
-      <app-button appSmallButton (click)="addCity()">Adicionar local</app-button>
+      </div>
+      <app-button appSmallButton (click)="addCity()">
+        <span appIcon> add </span>
+        Adicionar local
+      </app-button>
     </form>
   </app-card-content>
   <app-card-footer>

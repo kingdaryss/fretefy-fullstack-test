@@ -1,0 +1,4 @@
+<div class="app-input-container"  [class.focus-within]="isFocused">
+  <input class="app-input" id="app-input" [width]="width ? width + 'px' : '100%'" [(ngModel)]="value" (focus)="isFocused = true" (blur)="isFocused = false">
+  <label class="app-label" for="app-input" [class.active]="isFocused || value">{{label}}</label>
+</div>

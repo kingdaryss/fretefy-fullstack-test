@@ -1,6 +1,5 @@
 @import 'colors';
 
-
 * {
   font-family: Roboto;
 }
@@ -16,6 +15,11 @@ body { margin: 0; }
   font: size 60%;
 }
 
+h4,h5,h6 {
+  font-weight: 500;
+  margin-top: 5px;
+}
+
 .material-symbols-outlined {
   font-variation-settings: 'FILL' 0
 }
@@ -27,3 +31,4 @@ body { margin: 0; }
   font-weight: bold;
 }
 
+@import 'app/components/tooltip/tooltip.scss';

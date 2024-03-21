@@ -7,7 +7,8 @@
     <app-table [data]="dataSource$ | async">
       <app-toolbar>
         <ng-template>
-          <app-button app-button routerLink="/regiao" color="success"><span class="material-symbols-outlined fill">add</span> Adicionar</app-button>
+          <app-button app-button routerLink="/regiao" color="success">
+            <span appIcon>add</span> Adicionar</app-button>
         </ng-template>
       </app-toolbar>
       <app-column caption="Nome">
@@ -22,9 +23,9 @@
       </app-column>
       <app-column caption="Ações" [width]="150" [textAlign]="'center'">
         <ng-template let-item>
-          <app-button appIcon [routerLink]="['/regiao', item.name]"><span class="material-symbols-outlined">edit</span></app-button>
-          <app-button appIcon (click)="update(item, !item.status)">
-            <span class="material-symbols-outlined fill font-weight-bold text-primary">{{ item.status ? 'pause' : 'play_arrow'  }}</span>
+          <app-button appIconButton [appTooltip]="'Clique aqui para editar a região'" [routerLink]="['/regiao', item.name]"><span class="material-symbols-outlined">edit</span></app-button>
+          <app-button appIconButton [appTooltip]="'Clique aqui para ' + (item.status ? 'desativar' : 'ativar') + ' a região'" (click)="update(item, !item.status)">
+            <span appIconFill class="font-weight-bold text-primary">{{ item.status ? 'pause' : 'play_arrow'  }}</span>
           </app-button>
         </ng-template>
       </app-column>

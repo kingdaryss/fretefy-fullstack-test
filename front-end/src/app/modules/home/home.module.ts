@@ -5,6 +5,8 @@ import { RouterModule } from '@angular/router';
 import { TableModule } from 'src/app/components/table/table.module';
 import { ButtonModule } from 'src/app/components/button/button.module';
 import { CardModule } from 'src/app/components/card/card.module';
+import { TooltipModule } from 'src/app/components/tooltip/tooltip.module';
+import { IconModule } from 'src/app/components/icon/icon.module';
 
 
 @NgModule({
@@ -14,7 +16,9 @@ import { CardModule } from 'src/app/components/card/card.module';
 
     CardModule,
     TableModule,
-    ButtonModule
+    ButtonModule,
+    TooltipModule,
+    IconModule
   ],
   declarations: [HomeComponent],
   exports: [HomeComponent]
