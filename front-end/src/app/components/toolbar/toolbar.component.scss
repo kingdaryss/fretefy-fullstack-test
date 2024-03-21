@@ -17,12 +17,12 @@
   box-sizing: border-box;
   flex-direction: column;
   letter-spacing: normal;
-  height:64px;
+  height: 64px;
   .toolbar-row {
     display: flex;
     align-items: center;
     box-sizing: border-box;
-    padding: 0 20px;
+    padding: 0 var(--container-padding);
     white-space: nowrap;
     flex-direction: row;
     width:100%;
@@ -30,18 +30,12 @@
     .spacer {
       flex: 1 1 auto;
     }
-    @media only screen and (max-width: 600px) {
-      padding: 0 10px;
-    }
   }
 }
 .navbar {
   flex-wrap: nowrap !important;
   overflow-x: auto;
-  padding: 5px 20px;
-  @media only screen and (max-width: 600px) {
-    padding: 5px 10px;
-  }
+  padding: 5px var(--container-padding);
   background-color: var(--light);
   box-shadow: -3px 1px 1px 0px rgba(0, 0, 0, 0.01), 0px 8px 20px -6px rgba(0, 0, 0, 0.3), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
 }

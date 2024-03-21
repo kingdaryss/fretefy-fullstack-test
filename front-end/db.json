@@ -2,7 +2,7 @@
   "regiao": [
     {
       "id": "Nordeste",
-      "status": true,
+      "status": false,
       "name": "Nordeste",
       "citys": [
         {

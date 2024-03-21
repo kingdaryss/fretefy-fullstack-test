@@ -3,7 +3,7 @@ export class Animations {
   static animationDuration: string = '0.3s';
   static animationStyles: any = {
     position: 'absolute',
-    width: 'calc(100vw - 40px)',
+    width: 'calc(100% - calc(var(--container-padding) * 2))',
   };
   static routeFadeAnimation: AnimationTriggerMetadata = trigger('routeAnimations', [
     transition('* <=> *', [
