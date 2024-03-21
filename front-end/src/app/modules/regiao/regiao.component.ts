@@ -9,7 +9,11 @@ import { Regiao } from 'src/app/shared/models/regiao.model';
 import { RegiaoService } from './regiao.service';
 import { BaseFormComponent } from 'src/app/shared/abstract/base-form';
 
-@Component({ selector: 'app-regiao', templateUrl: './regiao.component.html', styleUrls: ['./regiao.component.scss'] })
+@Component({
+  selector: 'app-regiao',
+  templateUrl: './regiao.component.html',
+  styleUrls: ['./regiao.component.scss']
+})
 export class RegiaoComponent extends BaseFormComponent<Regiao> {
   citys$: Observable<{ id: number; name: string; }[]>;
   constructor(

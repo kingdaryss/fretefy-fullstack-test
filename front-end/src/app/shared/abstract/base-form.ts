@@ -1,15 +1,18 @@
-import { OnDestroy, OnInit } from "@angular/core";
+import { Component, Injectable, OnDestroy, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup } from "@angular/forms";
 import { Subscription } from "rxjs";
 import { Entity } from "../models/entity.model";
 import { ActivatedRoute, ParamMap, Router } from "@angular/router";
 import { CrudService } from "../services/crud.service";
 
+@Injectable({
+  providedIn: 'root'
+})
 export abstract class BaseFormComponent<T extends Entity> implements OnInit, OnDestroy {
-  protected id: string = '';
+  public id: string = '';
   protected subscriptionParamMap: Subscription;
   protected subscription: Subscription;
-  protected formGroup: FormGroup;
+  public formGroup: FormGroup;
   constructor(
     protected activatedRoute: ActivatedRoute,
     protected formBuilder: FormBuilder,
