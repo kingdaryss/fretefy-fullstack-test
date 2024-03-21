@@ -1,4 +1,9 @@
-<div class="app-input-container"  [class.focus-within]="isFocused">
-  <input class="app-input" id="app-input" [width]="width ? width + 'px' : '100%'" [(ngModel)]="value" (focus)="isFocused = true" (blur)="isFocused = false">
-  <label class="app-label" for="app-input" [class.active]="isFocused || value">{{label}}</label>
+<div class="app-input-container" [style.width]="widthStyle" [class.focus-within]="isFocused" >
+  <input [formControl]="ngControl.control" [id]="id" class="app-input" [style.width]="widthStyle"
+   (focus)="isFocused = true" (blur)="isFocused = false"
+   >
+  <label class="app-label" [for]="id" [class.active]="isFocused || ngControl.value">{{label}}</label>
+  <p class="app-error">
+    <app-error [showError]="showError" [ngControl]="ngControl"></app-error>
+  </p>
 </div>

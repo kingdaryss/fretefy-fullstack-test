@@ -46,11 +46,10 @@
   --untitled-ui-indigo50: #eef4ff;
   --untitled-ui-indigo700: #3538cd;
   --container-padding: 20px;
-  @media only screen and (max-width: 600px) {
-    --container-padding: 10px;
-  }
+  @media only screen and (max-width: 600px) { --container-padding: 10px; }
+  --toolbar-height: 64px;
+  --navbar-height: 40px;
 }
-
 
 .muted {
   background-color: var(--light);

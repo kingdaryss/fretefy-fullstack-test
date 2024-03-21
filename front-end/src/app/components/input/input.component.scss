@@ -1,6 +1,5 @@
 .app-input-container {
   position: relative;
-  margin-bottom: 24px;
 }
 .app-input {
   padding: 16px;
@@ -13,7 +12,7 @@
 }
 .app-label {
   position: absolute;
-  top: -7px;
+  top: -6px;
   left: 12px;
   padding: 0 4px;
   background-color: var(--white);
@@ -21,25 +20,41 @@
   font-size: 16px;
   transition: all 0.2s ease;
 }
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px var(--white) inset;
+}
 .app-input-container.focus-within .app-label,
 .app-input:not(:placeholder-shown) + .app-label {
-  top: 19px;
+  top: 16px;
   left: 12px;
   background-color: var(--white);
   cursor: text;
   padding: 0 4px;
-  font-size: 12px;
+  font-size: 16px;
   color: var(--midnight-blue);
 }
 .app-input-container.focus-within .app-input {
   border-color: var(--midnight-blue);
 }
 .app-label.active {
-  top: -7px !important;
+  top: -6px !important;
   left: 12px !important;
   background-color: var(--white);
   cursor: text;
   padding: 0 4px;
-  font-size: 12px;
+  font-size: 12px !important;
   color: var(--midnight-blue);
+}
+.ng-invalid.ng-touched.app-input {
+  border: 2px solid var(--laranja-escuro) !important;
+}
+.ng-invalid.ng-touched.app-input + .app-label {
+  color: var(--laranja-escuro) !important;
+}
+.app-error {
+  color: var(--laranja-escuro);
+  font-size: 80%;
+  margin-top: 4px;
+  margin-bottom: 0;
+  min-height:15px;
 }

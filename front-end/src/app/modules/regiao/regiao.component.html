@@ -8,10 +8,9 @@
       <app-input formControlName="name" label="Nome da região" required></app-input>
       <br>
       <h4>Locais da região</h4>
-
-      <div formArrayName="citys" *ngIf="citysFormArray.controls.length">
+      <div formArrayName="citys" *ngIf="citysFormArray.controls.length" class="grid">
         <div [formGroupName]="i" *ngFor="let city of citysFormArray.controls; let i=index" >
-            <app-input formControlName="name" label="Nome da região" required></app-input>
+            <app-input formControlName="name" label="Cidade" required></app-input>
           <br>
         </div>
       </div>
