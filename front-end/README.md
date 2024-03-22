@@ -44,9 +44,9 @@ Iniciando dia 15/03 -> Descanso 16/03 -> Finalizado dia 17/03
 
 ## Imagens demonstrativas
 
-<img src="tela_home.png">
+<img src="/tela_home.png">
 
-<img src="tela_cadastro.png">
+<img src="/tela_cadastro.png">
 
 ## Contextualização
 
@@ -95,7 +95,7 @@ RXJS 		-->		^6.5.3
 
 ## Imagens demonstrativas
 
-<img src="tela_home_sem_bibliotecas.png">
+<img src="/tela_home_sem_bibliotecas.png">
 
-<img src="tela_cadastro_sem_bibliotecas.png">
+<img src="/tela_cadastro_sem_bibliotecas.png">
 
