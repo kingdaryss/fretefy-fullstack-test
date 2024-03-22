@@ -1,28 +1,24 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home.component';
-
-import { MatCardModule } from '@angular/material/card';
-import { MatCommonModule } from '@angular/material/core';
-
-import { DxTreeListModule } from 'devextreme-angular';
 import { RouterModule } from '@angular/router';
-import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
-
-import { MatTooltipModule } from '@angular/material/tooltip';
+import { TableModule } from 'src/app/components/table/table.module';
+import { ButtonModule } from 'src/app/components/button/button.module';
+import { CardModule } from 'src/app/components/card/card.module';
+import { TooltipModule } from 'src/app/components/tooltip/tooltip.module';
+import { IconModule } from 'src/app/components/icon/icon.module';
 
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
-    MatCommonModule,
-    MatCardModule,
-    MatIconModule,
-    MatButtonModule,
-    DxTreeListModule,
-    MatTooltipModule
+
+    CardModule,
+    TableModule,
+    ButtonModule,
+    TooltipModule,
+    IconModule
   ],
   declarations: [HomeComponent],
   exports: [HomeComponent]

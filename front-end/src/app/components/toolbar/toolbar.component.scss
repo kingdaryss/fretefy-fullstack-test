@@ -1,48 +1,44 @@
-
-::ng-deep mat-toolbar {
-  display: inline-block;
-  margin: 0;
+.wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  .spacer {
-    flex: 1 1 auto;
-  }
-  .mat-toolbar-row {
-    padding: 0 20px;
-    border-bottom: 2px solid #e6e9ec;
-    @media only screen and (max-width: 600px) {
-      padding: 0 10px;
+  z-index: 99999;
+}
+.wrapper + .wrapper-relative {
+  height: calc(var(--toolbar-height) + var(--navbar-height));
+}
+.toolbar {
+  background-color: var(--midnight-blue);
+  width: 100%;
+  margin: 0;
+  color: var(--white);
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  letter-spacing: normal;
+  height: var(--toolbar-height);
+  .toolbar-row {
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0 var(--container-padding);
+    white-space: nowrap;
+    flex-direction: row;
+    width:100%;
+    min-height: var(--toolbar-height);
+    .spacer {
+      flex: 1 1 auto;
     }
   }
 }
-
-::ng-deep .navbar {
-  padding: 5px 20px;
-  @media only screen and (max-width: 600px) {
-    padding: 5px 10px;
-  }
+.navbar {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap !important;
+  overflow-x: auto;
+  padding: 0 var(--container-padding);
+  height: var(--navbar-height);
   background-color: var(--light);
   box-shadow: -3px 1px 1px 0px rgba(0, 0, 0, 0.01), 0px 8px 20px -6px rgba(0, 0, 0, 0.3), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
-  .mat-standard-chip {
-    border-radius: 6px;
-  }
-  .mat-chip-active {
-    color: white !important;
-    background-color: var(--midnight-blue) !important;
-  }
-  .example-box {
-    transition: .3s;
-    text-wrap: nowrap;
-    cursor:pointer;
-  }
-  .mat-chip-list-wrapper {
-    flex-wrap: nowrap !important;
-    overflow-x: auto;
-  }
-  .example-box.cdk-drag-animating {
-    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
-  }
-  .example-chip .cdk-drop-list-dragging {
-    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
-  }
-
 }

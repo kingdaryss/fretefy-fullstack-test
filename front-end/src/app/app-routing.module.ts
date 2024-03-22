@@ -1,9 +1,7 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule, CanActivate } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './modules/home/home.component';
 import { NavsGuard } from './core/route-guards/navs-guard';
-
-
 const routes: Routes = [
   {
     path: '',
@@ -14,21 +12,17 @@ const routes: Routes = [
     path: 'home',
     component: HomeComponent,
     canActivate: [NavsGuard],
-    data: {animation: 'HomePage'}
+    data: {animation: 'HomePage', name: "Regiões"}
   },
   {
     path: 'regiao',
     loadChildren: () => import('./modules/regiao/regiao.module').then(m => m.RegiaoModule),
-    data: {animation: 'RegiaoPage'}
+    data: {animation: 'RegiaoPage', name: "Região"}
   },
   {
     path: '**',
     redirectTo: '/home'
   }
 ];
-
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
+@NgModule({ imports: [RouterModule.forRoot(routes)], exports: [RouterModule] })
 export class AppRoutingModule { }

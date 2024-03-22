@@ -2,27 +2,22 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RegiaoComponent } from './regiao.component';
 import { RegiaoRoutingModule } from './regiao.routing';
-
-import { MatCardModule } from '@angular/material/card';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatButtonModule } from '@angular/material/button';
-import { MatCommonModule } from '@angular/material/core';
-import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
-import { SelectSearchModule } from 'src/app/components/select-search/select-search.module';
-
-
+import { CardModule } from 'src/app/components/card/card.module';
+import { ButtonModule } from 'src/app/components/button/button.module';
+import { InputModule } from 'src/app/components/input/input.module';
+import { IconModule } from 'src/app/components/icon/icon.module';
+import { TooltipModule } from 'src/app/components/tooltip/tooltip.module';
 @NgModule({
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    MatCommonModule,
-    MatCardModule,
-    MatFormFieldModule,
-    MatButtonModule,
-    MatInputModule,
     RegiaoRoutingModule,
-    SelectSearchModule
+    CardModule,
+    ButtonModule,
+    InputModule,
+    IconModule,
+    TooltipModule
   ],
   declarations: [RegiaoComponent],
   exports: [RegiaoComponent]

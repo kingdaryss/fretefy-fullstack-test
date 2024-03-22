@@ -81,6 +81,21 @@ Iniciando dia 19/03
 
 Prazo final Sexta-feira 22/03 às 23:59.
 
+Finalizado 21/03 as 21:00
+
+## Versões bases de configuração do projeto utilizadas:
+
+Angular 	-->		10.2.0 	
+<br/>
+Node JS 	-->  		^10.13.0 || ^12.11.0
+<br/>
+Typescript 	--> 		>=3.9.0 <\4.1.0	
+<br/>
+RXJS 		-->		^6.5.3
+
 ## Imagens demonstrativas
 
-Em construção...
+<img src="tela_home_sem_bibliotecas.png">
+
+<img src="tela_cadastro_sem_bibliotecas.png">
+

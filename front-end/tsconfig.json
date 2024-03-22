@@ -4,35 +4,7 @@
   "compilerOptions": {
     "baseUrl": "./",
     "resolveJsonModule": true,
-    "paths": {
-      "devextreme": [
-        "node_modules/devextreme"
-      ],
-      "devextreme/*": [
-        "node_modules/devextreme/*"
-      ],
-      "devextreme-angular": [
-        "node_modules/devextreme-angular"
-      ],
-      "devextreme-angular/*": [
-        "node_modules/devextreme-angular/*"
-      ],
-      "globalize": [
-        "node_modules/globalize/dist/globalize"
-      ],
-      "globalize/*": [
-        "node_modules/globalize/dist/globalize/*"
-      ],
-      "cldr": [
-        "node_modules/cldrjs/dist/cldr"
-      ],
-      "cldr/*": [
-        "node_modules/cldrjs/dist/cldr/*"
-      ],
-      "jszip": [
-        "node_modules/jszip/dist/jszip.min.js"
-      ]
-    },
+    "paths": { },
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,

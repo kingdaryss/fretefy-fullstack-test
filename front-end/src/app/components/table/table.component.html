@@ -1,0 +1,31 @@
+
+<div class="toolbar">
+  <ng-container *ngTemplateOutlet="toolbar"></ng-container>
+  <!--
+    TODO Input para pesquisar na tabela
+    deixar como opção da tabela para ativar e desativar
+  -->
+</div>
+<div class="container-table">
+  <table>
+    <thead>
+      <tr>
+        <th *ngFor="let column of columns" [ngStyle]="column.styles">{{ column.caption }}</th>
+        <!--
+          TODO Ordenar asc e desc no (click) e colocar classe para deixar com cursor-pointer
+          deixar como opção da tabela para ativar e desativar
+         -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of data">
+        <td *ngFor="let column of columns" [ngStyle]="column.styles">
+          <ng-container *ngTemplateOutlet="column.template; context: { $implicit: item }"></ng-container>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div style="height:300px; display:flex; align-items:center; justify-content:center;" *ngIf="!data.length">
+    <span class="text-primary">Sem Dados</span>
+  </div>
+</div>

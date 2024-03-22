@@ -1,45 +1,34 @@
-  <mat-card>
-    <mat-card-header>
-      <mat-card-title>Regiões</mat-card-title>
-      <mat-card-subtitle class="small">Listagem completa das regiões com detalhamento das cidades</mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content>
-      <div class="toolbar">
-        <button class="font-weight-bold" color="accent" #tooltip="matTooltip" matTooltip="Clique para adicionar nova região" matTooltipPosition="above" mat-stroked-button routerLink="/regiao">
-          <mat-icon class="font-weight-bold" >add</mat-icon>
-          Adicionar
-        </button>
-      </div>
-      <dx-tree-list
-        [dataSource]="dataSource$ | async" itemsExpr="citys" keyExpr="name"
-        dataStructure="tree" rowAlternationEnabled="true" [loadPanel]="{ enabled: false }"
-        [allowColumnResizing]="true" [autoExpandAll]="true"
-        [wordWrapEnabled]="true" [columnAutoWidth]="true"
-        [showRowLines]="true" [showBorders]="true">
-
-        <dxi-column dataField="name"></dxi-column>
-        <dxi-column dataField="status" [width]="100" cellTemplate="statusColumnTemplate"></dxi-column>
-        <dxi-column type="buttons"  [width]="100" caption="Ações" cellTemplate="editColumnTemplate" [allowEditing]="false"></dxi-column>
-
-        <div *dxTemplate="let d of 'statusColumnTemplate'">
-          <button style="cursor:unset;" *ngIf="d.data.status" mat-icon-button><mat-icon class="font-weight-bold" color="accent">done</mat-icon></button>
-          <button style="cursor:unset;" *ngIf="!d.data.status" mat-icon-button><mat-icon class="font-weight-bold" color="warn">close</mat-icon></button>
-        </div>
-
-        <div *dxTemplate="let d of 'editColumnTemplate'">
-          <div *ngIf="d.data.parentId === 0">
-            <button  #tooltip="matTooltip" matTooltip="Clique para editar a região" matTooltipPosition="above" mat-icon-button [routerLink]="['/regiao', d.data.name]"><mat-icon
-              color="primary">edit</mat-icon></button>
-            <button mat-icon-button *ngIf="d.data.status" (click)="update(d.data, !d.data.status)" #tooltip="matTooltip" matTooltip="Clique para desativar" matTooltipPosition="above">
-              <mat-icon  class="font-weight-bold" color="primary">pause</mat-icon>
-            </button>
-            <button mat-icon-button *ngIf="!d.data.status" (click)="update(d.data, !d.data.status)" #tooltip="matTooltip" matTooltip="Clique para ativar" matTooltipPosition="above">
-              <mat-icon class="font-weight-bold" color="primary">play_arrow</mat-icon>
-            </button>
-          </div>
-        </div>
-      </dx-tree-list>
-
-    </mat-card-content>
-
-  </mat-card>
+<app-card>
+  <app-card-header>
+    <span class="app-card-title">Regiões</span>
+    <span class="app-card-subtitle">Listagem completa das regiões com detalhamento das cidades</span>
+  </app-card-header>
+  <app-card-content>
+    <app-table [data]="dataSource$ | async">
+      <app-toolbar>
+        <ng-template>
+          <app-button [appTooltip]="'Clique aqui para adicionar uma região'"  app-button routerLink="/regiao" color="success">
+            <span appIcon>add</span> Adicionar</app-button>
+        </ng-template>
+      </app-toolbar>
+      <app-column caption="Nome">
+        <ng-template let-item>{{ item.name }}</ng-template>
+      </app-column>
+      <app-column caption="Status" [width]="100" [textAlign]="'center'">
+        <ng-template let-item>
+          <span class="material-symbols-outlined fill font-weight-bold" [ngClass]="item.status ? 'text-success' : 'text-danger'">
+            {{ item.status ? 'done' : 'close' }}
+          </span>
+        </ng-template>
+      </app-column>
+      <app-column caption="Ações" [width]="150" [textAlign]="'center'">
+        <ng-template let-item>
+          <app-button appIconButton [appTooltip]="'Clique aqui para editar a região'" [routerLink]="['/regiao', item.id]"><span appIcon>edit</span></app-button>
+          <app-button appIconButton [appTooltip]="'Clique aqui para ' + (item.status ? 'desativar' : 'ativar') + ' a região'" (click)="update(item, !item.status)">
+            <span appIconFill class="font-weight-bold text-primary">{{ item.status ? 'pause' : 'play_arrow'  }}</span>
+          </app-button>
+        </ng-template>
+      </app-column>
+    </app-table>
+  </app-card-content>
+</app-card>

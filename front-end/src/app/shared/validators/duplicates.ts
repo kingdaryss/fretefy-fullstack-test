@@ -12,10 +12,8 @@ export function uniqueValidator(): ValidatorFn {
         }
       }
     });
-
     const duplicates: { [key: string]: number[] } = {};
     const duplicateIndexes: number[] = [];
-
     valuesArray.forEach((value, index) => {
       duplicates[value] = duplicates[value] || [];
       if (duplicates[value].length > 0) {
@@ -24,9 +22,7 @@ export function uniqueValidator(): ValidatorFn {
       }
       duplicates[value].push(index);
     });
-
     const uniqueIndexes = new Set([...Array(formArray.controls.length).keys()].filter(i => !duplicateIndexes.includes(i)));
-
     formArray.controls.forEach((group, index) => {
       const nameControl = group.get('name');
       if (nameControl) {

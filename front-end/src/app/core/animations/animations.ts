@@ -1,10 +1,9 @@
-import { animate, query, style, transition, trigger, AnimationTriggerMetadata, state } from "@angular/animations";
-
+import { animate, query, style, transition, trigger, AnimationTriggerMetadata, state, keyframes } from "@angular/animations";
 export class Animations {
   static animationDuration: string = '0.3s';
   static animationStyles: any = {
     position: 'absolute',
-    width: 'calc(100vw - 40px)',
+    width: 'calc(100% - calc(var(--container-padding) * 2))',
   };
   static routeFadeAnimation: AnimationTriggerMetadata = trigger('routeAnimations', [
     transition('* <=> *', [
@@ -21,7 +20,6 @@ export class Animations {
       ], { optional: true }),
     ]),
   ]);
-
   static fadeOutAnimation: AnimationTriggerMetadata = trigger('fadeInOut', [
     state('void', style({ opacity: 0 })),
     transition('void <=> *', animate(300)),

@@ -1,6 +1,6 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ToolbarService, navLinkChips } from './toolbar.service';
-import { Observable, Subscription } from 'rxjs';
+import { Observable } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -11,11 +11,13 @@ import { ActivatedRoute } from '@angular/router';
 export class ToolbarComponent implements OnInit {
   navsLinks$: Observable<navLinkChips[]>;
   constructor(private toolbarService: ToolbarService, private activatedRoute: ActivatedRoute) {}
-  ngOnInit(): void {
-    this.navsLinks$ = this.toolbarService.navsChips$
-  }
+  ngOnInit(): void { this.navsLinks$ = this.toolbarService.navsChips$ }
   removeNavLink(nav: navLinkChips): void {
-    console.log(this.activatedRoute)
+    /* TODO
+      fazer lógica para quando for remover o elemento,
+      verificar se a routerLink é a atual da activatedRoute,
+      se for redirecionar para o url do index 0
+    */
     this.toolbarService.remove(nav)
   }
 }

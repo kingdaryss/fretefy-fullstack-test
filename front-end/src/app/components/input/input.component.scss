@@ -1,0 +1,61 @@
+.app-input-wrapper {
+  position: relative;
+}
+.app-input {
+  padding: 16px;
+  border: 2px solid var(--gainsboro);
+  outline: none;
+  font-size: 16px;
+  background-color: transparent;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+}
+.app-label {
+  position: absolute;
+  top: -6px;
+  left: 12px;
+  padding: 0 4px;
+  background-color: var(--white);
+  color: var(--gainsboro);
+  font-size: 16px;
+  transition: all 0.2s ease;
+}
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px var(--white) inset;
+}
+.app-input-wrapper.focus-within .app-label,
+.app-input:not(:placeholder-shown) + .app-label {
+  top: 16px;
+  left: 12px;
+  background-color: var(--white);
+  cursor: text;
+  padding: 0 4px;
+  font-size: 16px;
+  color: var(--midnight-blue);
+}
+.app-input-wrapper.focus-within .app-input {
+  border-color: var(--midnight-blue);
+}
+.app-label.active {
+  top: -6px !important;
+  left: 12px !important;
+  background-color: var(--white);
+  cursor: text;
+  padding: 0 4px;
+  font-size: 12px !important;
+  color: var(--midnight-blue);
+}
+.ng-invalid.ng-touched.app-input {
+  border: 2px solid var(--laranja-escuro) !important;
+}
+.ng-invalid.ng-touched.app-input + .app-label {
+  color: var(--laranja-escuro) !important;
+}
+::ng-deep [appSuffix] {
+  position: absolute;
+  right: 0;
+  top: 10px;
+}
+::ng-deep [appSuffix] button {
+  padding: 10px 6px !important;
+}

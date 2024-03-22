@@ -1,0 +1,9 @@
+<div class="app-input-wrapper" [style.width]="widthStyle" [class.focus-within]="isFocused" >
+  <input [formControl]="ngControl.control" [id]="id" class="app-input" [style.width]="widthStyle"
+   (focus)="isFocused = true" (blur)="isFocused = false"
+   >
+  <label class="app-label" [for]="id" [class.active]="isFocused || ngControl.value">{{label}}</label>
+  <ng-content select="[appSuffix]"></ng-content>
+
+  <app-error [showError]="showError" [ngControl]="ngControl"></app-error>
+</div>

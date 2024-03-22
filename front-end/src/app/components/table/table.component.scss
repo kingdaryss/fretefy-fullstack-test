@@ -1,0 +1,33 @@
+.container-table {
+  width: 100%;
+  overflow-x: auto;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow-x: auto;
+}
+th {
+  background-color: var(--gainsboro);
+  color: var(--black);
+  font-weight:500;
+  padding: 10px;
+  text-align: left;
+  border: 1px solid var(--gainsboro);
+}
+td {
+  padding: 10px;
+  height: 45px;
+  text-align: left;
+  border: 1px solid var(--gainsboro);
+}
+tr:nth-child(odd) {
+  background-color: var(--gray-2023);
+  height: 45px;
+}
+.toolbar {
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
