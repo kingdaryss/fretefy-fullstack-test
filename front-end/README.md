@@ -42,9 +42,9 @@ Fonte: https://angular.io/guide/versions#unsupported-angular-versions
 
 ## Imagens demonstrativas
 
-<img src="/tela_home.png">
+<img src="tela_home.png">
 
-<img src="/tela_cadastro.png">
+<img src="tela_cadastro.png">
 
 ## Contextualização
 
@@ -78,6 +78,8 @@ Iniciando dia 19/03
 
 Prazo final Sexta-feira 22/03 às 23:59.
 
+Finalizado 21/03 as 21:00
+
 ## Versões bases de configuração do projeto utilizadas:
 
 Angular 	-->		10.2.0 	
@@ -87,3 +89,10 @@ Node JS 	-->  		^10.13.0 || ^12.11.0
 Typescript 	--> 		>=3.9.0 <\4.1.0	
 <br/>
 RXJS 		-->		^6.5.3
+
+## Imagens demonstrativas
+
+<img src="tela_home_sem_bibliotecas.png">
+
+<img src="tela_cadastro_sem_bibliotecas.png">
+
