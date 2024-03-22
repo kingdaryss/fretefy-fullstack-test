@@ -11,7 +11,7 @@
       <div formArrayName="citys" *ngIf="citysFormArray.controls.length" class="grid">
         <div [formGroupName]="i" *ngFor="let city of citysFormArray.controls; let i=index" >
             <app-input formControlName="name" label="Cidade" required>
-              <app-button *ngIf="citysFormArray.controls.length > 1" appIconButton appSuffix [appTooltip]="'Clique aqui para adicionar uma nova cidade na região'" appSmallButton (click)="removeCity(i)">
+              <app-button *ngIf="citysFormArray.controls.length > 1" appIconButton appSuffix [appTooltip]="'Clique aqui para remover'" appSmallButton (click)="removeCity(i)">
                 <span appIcon>close</span>
               </app-button>
             </app-input>
