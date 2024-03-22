@@ -1,147 +1,98 @@
-# Fretefy | FullStack
+# FretefyFrontend
 
-Bem vindo,
+Projeto se encontra mantida na branch do fork sendo feature/estrutura
 
-Se você chegou até aqui é porque queremos conhecer um pouco mais sobre as suas habilidades no desenvolvimento do front e back, para isso preparamos um projeto onde você terá que desenvolver um CRUD básico.
+Inicialmente não sabia se era mais prático dar um ng update do projeto para uma versão mais recente do Angular,<br/> ou se usava o nvm pra trocar a versão do meu node,<br/> optei por trocar a versão do node e assumir os riscos de perder o suporte do Angular na versão antiga e mostrar que conseguiria trabalhar em um projeto legado,<br/> julgando que eu estivesse trabalhando em um projeto legado cujo a versão fosse menor e dificil de ser atualizada.
 
-Caso você tenha alguma dúvida, pode esclarece-las no nosso canal do Discord, para entrar acesse o link https://discord.gg/Gne78BtPAu
+<br/>
+Realizado em dois dias
+Iniciando dia 15/03 -> Descanso 16/03 -> Finalizado dia 17/03
 
-Esperamos que você faça tudo o que o projeto especifica, mas se você não conhecer alguma tecnologia mesmo que seja o front ou back inteiro, ainda faça aquilo que você domina.
+## Versões bases de configuração do projeto utilizadas:
 
-Boa sorte!
+Angular 	-->		10.2.0 	
+<br/>
+Node JS 	-->  		^10.13.0 || ^12.11.0
+<br/>
+Typescript 	--> 		>=3.9.0 <\4.1.0	
+<br/>
+RXJS 		-->		^6.5.3
 
-# Como começar?
-
-1. Faça o fork do projeto `https://github.com/glauciowathier/fretefy-fullstack-test.git`
-2. Faça sua implementação
-3. Suba seu código no fork criado
-4. Nos avise sobre a finalização da implementação 🚀
-
-Para avisar, você pode sinalizar no Discord ou enviar um e-mail para glaucio.wathier@fretefy.com.br
-
-# Atividade
-
-Implementar um cadastro básico de regiões, basicamente um formulário composto por um nome e as cidade/uf que compoem aquela região.
-
-### Campos Requeridos
-- Nome
-- Cidades
-    - Cidade
-    - UF
-
-### Requisitos
-- O campo nome é obrigatório
-- Não deve permitir cadastrar duas regiões com o mesmo nome
-- É obrigatório informar ao menos uma cidade na região
-- Não pode ser informada a mesma cidade duas ou mais vezes
-- Uma região pode ser desativada/ativada
-- O campo de cidade/uf deve ser um seletor (combobox)
-
-# 1. Atividades Front-End
-
-O front-end deve ser desenvolvido em Angular, seguindo os conceitos do framework, na pasta front-end tem uma estrutura básica já com o módulo `regiao` pronto para você começar.
-
-Cada operação irá listar nos requisitos técnicos alguns recursos que devem ser utilizados.
-
-O fluxo das telas é livre, mas deve obrigatóriamente utilizar Angular Routes.
-
-Você pode fazer um mock das operações caso não implemente o back, mas se implementar o backend, deve fazer a comunicação completa.
-
-Não a necessidade que a interface siga um design específico, o importante é ter navegação e ser um formulário, utilizando os componentes nativos do HTML está valendo.
-
-No front deve conter as seguintes operações:
-
-1. Listagem de Regiões
-2. Cadastro de Regiões
-3. Edição de Regiões
-4. Componente de Seletor de Cidade
-
-## 1.1 Listagem de Regiões
-
-Na listagem de regiões devem ser listadas todas as regiões cadastradas e conter ações específicas
+Fonte: https://angular.io/guide/versions#unsupported-angular-versions
 
 
-![Cadastro de Regiões](assets/referencia_listagem.png)
-> Imagem de referência para a listagem
+# Parte 1
 
-### **Requisitos**
+## Funcionalidades do Projeto
 
-- As regiões devem ser listadas em forma de tabela (table)
-- Cada região deve conter uma coluna que identifique se ela está ativa ou inativa
-- Cada região deve conter uma ação para ativar ou desativar a região, devendo apresentar apenas a ação que modifique o estado atual. Se ela estiver ativa, deve haver uma ação desativar e vice-versa.
-- Cada região deve conter uma ação para editar a região
-- Na listagem deve haver em algum local uma ação que permita cadastrar uma nova região
+-> Módulo de Loader genérico.
+<br/>
+-> Módulo de Navbar interativo.
+<br/>
+-> Componente de select search com desenvolvimento focado em carregamento pesado de dados.
+<br/>
+-> Treelist para exibição dos dados na home.
+<br/>
+-> Shared com as entidades e services genéricos.
+<br/>
+-> Tooltips
+<br/>
+-> Demais funcionalidades de requisitos (Validator duplicado, Tooltips, Requireds e utilizado diversos operadores rxJS).
+<br/>
 
-### **Requisitos Técnicos**
+## Imagens demonstrativas
 
-- Preferencialmente deve utilizar `rxjs` com o pipe `async` na listagem de regiões
-- As ações deverão preferencialmente ser realizadas via `routerLink`
-- As chamadas para API devem obrigatóriamente passar por um service
+<img src="tela_home.png">
 
-## 1.2 Cadastro de Regiões
+<img src="tela_cadastro.png">
 
-No cadastro você deve permitir que o usuário realize o cadastro de uma região, contendo os campos requeridos.
+## Contextualização
 
-![Cadastro de Regiões](assets/referencia_cadastro.png)
-> Imagem de referência para o cadastro
+Primeiramente realizei estruturação de um projeto para possuir uma ampla escalabilidade.
+<br/>
+Sofri alguns problemas principalmente do devextreme pela falta de recurso na lib que utilizei por não ter suporte nas versões recentes dele para versão do Angular na 10.
+<br/>
+Após a estruturação da base, iniciei o desenvolvimento dos requisitos no backlog.
+<br/>
+Utilizei o json-server para simular o retorno de uma API.
+<br/>
+Não utilizei nenhum tipo de grid como o flexbox por exemplo, pois não encontrei algo realmente necessário, mas conheço bem a tecnologia.
+<br/>
+Usei um pouco de cada coisa para demonstrar algumas técnicas que conheço, tem outras funcionalidades também mas achei que se implementasse não daria tempo de entregar na segunda-feira que era meu planejado.
+<br/>
+Não implementei os testes em Jasmine e Protector pois disseram não ser necessário.
+<br/>
+Caso encontre algum erro ou impedimento ao rodar o projeto, estou disponível, Agradeço desde já a participação !
 
-### **Requisitos**
-- O campo nome é obrigatório
-- Não permitir cadastrar duas regiões com o mesmo nome
-- É obrigatório informar ao menos uma cidade na região
-- Não pode ser informada a mesma cidade duas ou mais vezes
-- O campo de cidade/uf deve ser um seletor (combobox)
-- Conter uma ação para salvar
-- Conter uma ação para cancelar
 
-### **Requisitos Técnicos**
+# Parte 2
 
-- Preferencialmente faça o formulário utilizando ReactiveForms, esperamos ver `FormGroup` para o formulário geral, `FormControl` para os campos e um `FormArray` para as cidades.
-- As validações devem, preferencialmente ser feitas com os `Validators` do Angular.
-- As ações deverão passar por um service, assim como na listagem.
+Projeto se encontra mantida na branch do fork sendo feature/reestruturacao-apenas-css, e vou subir na main sobrescrevendo a parte 1.
 
-## 1.3 Edição de Região
+Foi aberto uma solicitação para medir mais conhecimento tendo como requisito técnico a remoção da bibliotecas de estilização (Devextreme, Angular Material).<br/>
+Vou julgar também que não posso usar bibliotecas como angular/flex-layout para estilização das grids e vou montar tudo manual com CSS nativo.<br/>
+Meu backlog é fazer toda uma reestrutura da parte 1 em uma nova branch e também adicionar um novo cadastro de cidades.
+<br/>
 
-Na edição você deve permitir que o usuário edite um cadastro, para isso você preferencialmente deve utilizar o mesmo componente de cadastro variando apenas a rota.
+Iniciando dia 19/03
 
-## 1.4 Componente Seletor de Cidade
+Prazo final Sexta-feira 22/03 às 23:59.
 
-Implementar um componente Angular que represente o seletor de cidade
+Finalizado 21/03 as 21:00
 
-### **Requisitos**
+## Versões bases de configuração do projeto utilizadas:
 
-- Listar todas as cidades no formato de `select`
-- Refletir a cidade selecionada 
+Angular 	-->		10.2.0 	
+<br/>
+Node JS 	-->  		^10.13.0 || ^12.11.0
+<br/>
+Typescript 	--> 		>=3.9.0 <\4.1.0	
+<br/>
+RXJS 		-->		^6.5.3
 
-### **Requisitos Técnicos**
+## Imagens demonstrativas
 
-- O componente deverá ser autonomo devendo saber listar e refletir a cidade selecionada
-- As ações deverão passar por um service
-- Preferencialmente trabalhar com FormControl
+<img src="tela_home_sem_bibliotecas.png">
 
-# 2. Atividades Back-End
+<img src="tela_cadastro_sem_bibliotecas.png">
 
-O back-end deve ser desenvolvido em ASP.Net Core 3.1 com uma WebApi REST e uma estruturação do projeto no formato do DDD. A persistência dos dados deve ser atraves do Entity Framework Core, no modelo Code First e utilizando Migrations.
-
-Na pasta back-end já tem uma estrutura básica do projeto para começar, ele já está prepado para seguir os conceito de DDD, incluindo um exemplo.
-
-Como utilizamos Entity para este projeto vamos utitilizar o SQLite para facilitar.
-
-## Requisitos
-- Implementar uma entidade região que contenha o nome e as cidades que compoem a região.
-- A entidade Região deverão ser persistida em duas tabelas Regiao e RegiaoCidade em uma relação `1..N`.
-- Implementar um RegiaoController que contenhas as operações de acordo com o verbo HTTP correspondente (`GET, POST, PUT`) que deverão chamar as respectivas ações do RegiaoService.
-- Implementar um RegiaoService que contenha as operações do CRUD (`List, Create, Update`) que deverão chamar as respectivas ações do RegiaoRepository
-- Implementar um Repository que contenham as operações de do CRUD (`List, Create, Update`) que deverão chamar as respectivas ações no Entity Framework
-- Service e Repository deverão ser instanciados via Dependecy Injection no lifetime apropriado 
-- Service e Repository deverão ter cada uma sua respectiva interface para uso e registro no Dependency Injection
-
-## Observações
-1. Caso não esteja habituado com o formato DDD procure referencia nos exemplos ou faça da forma que você julgar melhor (Priorizamos o formato DDD na avaliação).
-2. Fique a vontade para incluir mais operações que julgar necessário, mesmo que elas não estejam nos requisitos.
-3. Para simplificar abstraimos o AppService do DDD, caso queira implementar, será um diferencial.
-
-## Dicas
-1. O CORS necessita ser configurado no back para que se comunique corretamente com o front 😉
-2. Acha que pode melhorar alguma coisa que está implementada, vá em frente 😎
-3. Tem algum conhecimento extra que gostaria de demonstrar, a hora é agora 🏆
