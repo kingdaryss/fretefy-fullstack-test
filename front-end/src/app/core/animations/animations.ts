@@ -1,4 +1,4 @@
-import { animate, query, style, transition, trigger, AnimationTriggerMetadata, state } from "@angular/animations";
+import { animate, query, style, transition, trigger, AnimationTriggerMetadata, state, keyframes } from "@angular/animations";
 export class Animations {
   static animationDuration: string = '0.3s';
   static animationStyles: any = {

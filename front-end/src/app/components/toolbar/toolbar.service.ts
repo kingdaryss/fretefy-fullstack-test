@@ -9,7 +9,7 @@ export interface navLinkChips {
   providedIn: 'root'
 })
 export class ToolbarService {
-  private navsChips: BehaviorSubject<navLinkChips[]> = new BehaviorSubject<navLinkChips[]>([{name: 'Região / Home', url: 'home', isRemove: false}]);
+  private navsChips: BehaviorSubject<navLinkChips[]> = new BehaviorSubject<navLinkChips[]>([{name: 'Regiões / Home', url: 'home', isRemove: false}]);
   public navsChips$: Observable<navLinkChips[]> = this.navsChips.asObservable();
   constructor() {}
   update (nav: navLinkChips): void {

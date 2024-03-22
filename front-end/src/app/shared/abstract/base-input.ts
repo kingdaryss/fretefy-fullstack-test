@@ -3,9 +3,7 @@ import { ControlValueAccessor, FormControl, NgControl } from "@angular/forms";
 
 let globalUniqueIdCounter = 0;
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable({ providedIn: 'root' })
 export abstract class BaseInputComponent implements ControlValueAccessor {
   private _isFocused: boolean = false;
   public id: number;

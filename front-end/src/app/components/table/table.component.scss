@@ -17,11 +17,13 @@ th {
 }
 td {
   padding: 10px;
+  height: 45px;
   text-align: left;
   border: 1px solid var(--gainsboro);
 }
 tr:nth-child(odd) {
   background-color: var(--gray-2023);
+  height: 45px;
 }
 .toolbar {
   margin-bottom: 15px;

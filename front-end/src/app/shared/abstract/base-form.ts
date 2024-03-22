@@ -1,4 +1,4 @@
-import { Component, Injectable, OnDestroy, OnInit } from "@angular/core";
+import { Injectable, OnDestroy, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup } from "@angular/forms";
 import { Subscription } from "rxjs";
 import { Entity } from "../models/entity.model";
@@ -17,8 +17,7 @@ export abstract class BaseFormComponent<T extends Entity> implements OnInit, OnD
     protected activatedRoute: ActivatedRoute,
     protected formBuilder: FormBuilder,
     protected entityService: CrudService<Entity>,
-    protected router: Router
-  ) {}
+    protected router: Router) {}
   ngOnInit(): void { this.subscriptionParamMap = this.activatedRoute.paramMap.subscribe((queryParams: ParamMap) => this.routeChanged(queryParams)); }
   ngOnDestroy(): void { this.subscriptionParamMap?.unsubscribe(); this.subscription?.unsubscribe(); }
   protected routeChanged(queryParams: ParamMap): void {

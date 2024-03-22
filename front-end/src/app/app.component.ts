@@ -10,7 +10,5 @@ import { ChildrenOutletContexts, OutletContext } from '@angular/router';
 export class AppComponent {
   title: string = 'Fretefy';
   constructor(private contexts: ChildrenOutletContexts){}
-  getRouteAnimationData(): OutletContext {
-    return this.contexts.getContext('primary')?.route?.snapshot?.data?.['animation'];
-  }
+  getRouteAnimationData(): OutletContext { return this.contexts.getContext('primary')?.route?.snapshot?.data?.['animation']; }
 }

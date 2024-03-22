@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
   constructor(private homeService: HomeService) { }
   refresh(): void { this.dataSource$ = this.homeService.all() }
   update(item: any, status: boolean): void {
-    this.homeService.get(item.name).subscribe((response: Regiao) => {
+    this.homeService.get(item.id).subscribe((response: Regiao) => {
       let responseItem = {...response}
       responseItem.status = status;
       this.homeService.update(responseItem).subscribe(() => this.refresh() );

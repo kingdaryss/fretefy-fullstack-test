@@ -12,12 +12,12 @@ const routes: Routes = [
     path: 'home',
     component: HomeComponent,
     canActivate: [NavsGuard],
-    data: {animation: 'HomePage', name: "Região"}
+    data: {animation: 'HomePage', name: "Regiões"}
   },
   {
     path: 'regiao',
     loadChildren: () => import('./modules/regiao/regiao.module').then(m => m.RegiaoModule),
-    data: {animation: 'RegiaoPage', name: "Regiões"}
+    data: {animation: 'RegiaoPage', name: "Região"}
   },
   {
     path: '**',

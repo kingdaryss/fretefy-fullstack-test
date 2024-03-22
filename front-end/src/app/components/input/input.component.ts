@@ -6,6 +6,7 @@ import { BaseInputComponent } from 'src/app/shared/abstract/base-input';
 export class InputComponent extends BaseInputComponent {
   @Input() label: string = "";
   @Input() width: number;
+
   get widthStyle() { return this.width ? this.width + 'px' : 'calc(100% - 16px)'; }
   constructor(@Self() @Optional() public ngControl: NgControl) { super(ngControl) }
 }

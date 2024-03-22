@@ -1,5 +1,6 @@
 import { Component, ContentChildren, QueryList, AfterContentInit, TemplateRef, Input, ContentChild } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Animations } from 'src/app/core/animations/animations';
 export interface ColumnDataTable {
   caption: string;
   template: TemplateRef<any>;
@@ -31,7 +32,7 @@ export class TableComponent implements AfterContentInit {
   @ContentChildren(TableToolbarComponent) toolbarComponent: QueryList<TableToolbarComponent>;
   columns: ColumnDataTable[] = [];
   toolbar: TemplateRef<any>;
-  @Input() data: any[] | Observable<any[]> = [];
+  @Input() data: any[] = [];
   ngAfterContentInit() {
     this.columns = this.columnComponent.toArray().map(column => ({ caption: column.caption, template: column.template, styles: column.style() }));
     this.toolbar = this.toolbarComponent.first.template;
